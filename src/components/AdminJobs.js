@@ -7,7 +7,10 @@ class AdminJobs extends Component {
           header: '',
           text: '',
           link: '',
-          date: ''
+          date: '',
+          key: '',
+          display: '',
+          jobsArray: []
       };
     }
 

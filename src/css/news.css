@@ -15,14 +15,16 @@ h2.news-header {
   line-height: 2rem;
 }
 
-.news-body-text-container {
+p.news-body-text-container {
   margin-bottom: 10px;
   max-width: 45rem;
+  display: inline;
 }
 
 
 .news-body-text-container p {
   margin: 0;
+  display: inline;
 }
 
 .news-body-text-container a {

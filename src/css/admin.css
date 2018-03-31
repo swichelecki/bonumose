@@ -3,7 +3,7 @@ label {
 }
 
 button {
-  margin-right: 25px;
+  margin-right: 20px;
   padding: 5px 10px;
   cursor: pointer;
 }
@@ -15,4 +15,10 @@ input[type=submit] {
 
 .react-quill.ql-editor {
   min-height: 18rem;
+}
+
+button.cancel-button {
+  position: relative;
+  left: 90px;
+  top: -30px;
 }

@@ -79,9 +79,9 @@ class NewsSection extends Component {
                 <div id="news-container-top" key={index}>
                   <h2 className="news-header">{news.header}</h2>
                   <p className="news-date-posted">{news.date}</p>
-                    <div className="news-body-text-container" dangerouslySetInnerHTML={{__html: news.text}}>
-                    </div>
-                    <span className="anchor-underline"><a className="news-anchor" href={news.url} target="_blank">Read More <i className="fa fa-angle-right"></i></a></span>
+                    <p className="news-body-text-container" dangerouslySetInnerHTML={{__html: news.text}}>
+                    </p>
+                    &nbsp;<span className="anchor-underline"><a className="news-anchor" href={news.url} target="_blank">Read More <i className="fa fa-angle-right"></i></a></span>
                 </div>
               );
 

@@ -12,11 +12,17 @@ class AdminNews extends Component {
       this.setDate = this.setDate.bind(this);
       this.confirmDelete = this.confirmDelete.bind(this);
       this.deleteNews = this.deleteNews.bind(this);
+      this.editNewsItem = this.editNewsItem.bind(this);
+      this.openCloseForm = this.openCloseForm.bind(this);
+      this.handleEditFormSubmit = this.handleEditFormSubmit.bind(this);
+
       this.state = {
           header: '',
           text: '',
           url: '',
           date: '',
+          key: '',
+          display: 'none',
           newsArray: []
       };
     }
@@ -159,11 +165,87 @@ class AdminNews extends Component {
     }
 
    /*
+    * @desc fills state with values of news item that is to be edited
+    */
+
+    editNewsItem(header, text, url, key) {
+
+      this.setState({
+        header: header,
+        text: text,
+        url: url,
+        key: key
+      });
+
+    }
+
+   /*
+    * @desc updates database record for edited news item
+    */
+
+    handleEditFormSubmit(event) {
+
+      event.preventDefault();
+
+      let editedNewsObject = this.state;
+      delete editedNewsObject.newsArray;
+
+      let key = editedNewsObject.key;
+
+      let newsItemToUpdate = firebase.database().ref().child('news').child(key);
+
+      newsItemToUpdate.once('value', function(snapshot){
+
+        if (snapshot.val() === null) {
+            alert('Item does not exist.');
+        } else {
+            newsItemToUpdate.update(editedNewsObject);
+        }
+
+      });
+
+      this.setState({
+        header: '',
+        text: '',
+        url: '',
+        key: '',
+        display: 'none'
+      });
+
+      window.scrollTo(0,0);
+
+    }
+
+   /*
+    * @desc shows and hides forms based on display value
+    */
+
+    openCloseForm() {
+
+      if (this.state.display == 'none') {
+          this.setState({
+            display: 'block'
+          });
+      } else {
+          this.setState({
+            display: 'none',
+            header: '',
+            text: '',
+            url: '',
+            key: ''
+          });
+      }
+
+      window.scrollTo(0,0);
+
+    }
+
+   /*
     * @desc asks user to confirm delete action
     */
 
     confirmDelete(key) {
-      
+
       let deleteNews = confirm('Are you sure you want to delete this?');
 
       if (deleteNews == true) {
@@ -187,16 +269,26 @@ class AdminNews extends Component {
 
         return(
           <div>
-            THIS IS ADMIN NEWS COMPONENT!
             <NewsForm
               onFormChange={this.handleFormChange}
               onQuillChange={this.handleQuillChange}
               onFormSubmit={this.setDate}
               formValue={this.state}
+              displayProp={this.state.display}
+            />
+            <EditNewsForm
+              onFormChange={this.handleFormChange}
+              onQuillChange={this.handleQuillChange}
+              onFormSubmit={this.handleEditFormSubmit}
+              editFormValue={this.state}
+              cancelEdit={this.openCloseForm}
+              displayProp={this.state.display}
             />
             <h2>Manage News Items</h2>
             <ManageNews newsArray={this.state.newsArray}
               deleteNewsItem={this.confirmDelete}
+              editNews={this.editNewsItem}
+              openForm={this.openCloseForm}
             />
           </div>
         );
@@ -207,8 +299,16 @@ class NewsForm extends Component {
 
     render() {
 
+        const displayValue = this.props.displayProp;
+
+        let formDisplay = null;
+
+        formDisplay = (displayValue == 'none') ? formDisplay = 'block' : formDisplay = 'none';
+
+        const displayStyle = {display: formDisplay}
+
         return(
-          <div>
+          <div style={displayStyle}>
             <form onSubmit={this.props.onFormSubmit}>
               <h2>Add News Item</h2>
               <label>Header:<br/>
@@ -227,6 +327,34 @@ class NewsForm extends Component {
     }
 }
 
+class EditNewsForm extends Component {
+
+    render() {
+
+        const displayValue = this.props.displayProp;
+        const displayStyle = {display: displayValue}
+
+        return(
+          <div style={displayStyle}>
+            <form onSubmit={this.props.onFormSubmit}>
+              <h2>Edit News Item</h2>
+              <label>Header:<br/>
+                <input type="text" name="header" value={this.props.editFormValue.header} onChange={this.props.onFormChange}/>
+              </label>
+              <label>Text:
+                <ReactQuill value={this.props.editFormValue.text} onChange={this.props.onQuillChange}/>
+              </label>
+              <label>Read More URL:<br/>
+                <input type="text" name="url" value={this.props.editFormValue.url} onChange={this.props.onFormChange}/>
+              </label>
+              <input type="submit" value="Submit"/>
+            </form>
+              <button className="cancel-button" onClick={this.props.cancelEdit}>Cancel</button>
+          </div>
+        );
+    }
+}
+
 class ManageNews extends Component {
 
     render() {
@@ -237,7 +365,7 @@ class ManageNews extends Component {
             return(
               <div key={index}>
                 <h3>{news.header}</h3>
-                <button>Edit</button>
+                <button onClick={() => {this.props.editNews(news.header, news.text, news.url, news.key); this.props.openForm();}}>Edit</button>
                 <button onClick={() => this.props.deleteNewsItem(news.key)}>Delete</button>
               </div>
             );
