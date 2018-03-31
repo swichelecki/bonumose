@@ -1,0 +1,113 @@
+#header-image {
+  position: relative;
+  max-width: 2000px;
+  padding-top: 30%; /* 600 / 2000 = .3*/
+  margin: 0 auto;
+  background-image: url('https://dummyimage.com/2000x550/ababab/ffffff.jpg&text=2000+x+550');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+}
+
+p#header-image-text {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 50px;
+  line-height: normal;
+}
+
+p#header-image-text.header-are-relative {
+  position: relative;
+}
+
+.header-are-absolute {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+p#header-image-text.header-rare-relative {
+  position: relative;
+}
+
+.header-rare-absolute {
+  position: absolute;
+  left: 16px;
+}
+
+.body-header {
+  text-align: center;
+  font-size: 40px;
+  margin: 30px 0 20px 0;
+}
+
+.flexbox-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.flexbox {
+  width: 45%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.home-flex-title {
+  color: #000;
+}
+
+.home-flex-info {
+  color: #000;
+}
+
+.home-flex-learn {
+  color: #000;
+}
+
+#natural-wrapper {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 2rem 0 4rem 0;
+}
+
+#natural-wrapper p.body-header {
+  margin-bottom: 2.5rem;
+}
+
+.learn-more-a {
+  font-size: 18px;
+  color: #000;
+}
+
+#rectange-flexbox-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 2000px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-bottom: 4rem;
+}
+
+.flex-rect-one, .flex-rect-two, .flex-rect-three, .flex-rect-four {
+  position: relative;
+  width: 25%;
+  padding-top: 22.6%; /* 450 / 2000 = .225 */
+  background-image: url('https://dummyimage.com/500x450/ababab/f7f7f7.jpg&text=500x450');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+}
+
+p.rectangle-text {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 4vw;
+  color: #000;
+}

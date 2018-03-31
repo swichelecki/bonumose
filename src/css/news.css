@@ -1,0 +1,51 @@
+#news-header-image {
+  position: relative;
+  max-width: 2000px;
+  padding-top: 20.1%; /* 400 / 2000 = .2*/
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  background-image: url('https://dummyimage.com/2000x400/ababab/ffffff.jpg&text=2000+x+400');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+}
+
+h2.news-header {
+  max-width: 45rem;
+  line-height: 2rem;
+}
+
+.news-body-text-container {
+  margin-bottom: 10px;
+  max-width: 45rem;
+}
+
+
+.news-body-text-container p {
+  margin: 0;
+}
+
+.news-body-text-container a {
+  text-decoration: underline;
+  color: #000;
+}
+
+.news-anchor {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.news-date-posted {
+  position: relative;
+  top: -10px;
+  margin-bottom: 0px;
+}
+
+#news-container-top {
+  margin-bottom: 2rem;
+}
+
+i.fa-angle-right {
+  font-size: 18px;
+  font-weight: 600;
+}

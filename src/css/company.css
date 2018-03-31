@@ -1,0 +1,25 @@
+.company-text-header {
+  font-size: 40px;
+}
+
+.company-ol {
+  font-size: 18px;
+  line-height: 1.5rem;
+}
+
+.company-bottom-margin {
+  margin-bottom: 6rem;
+  padding: 0 2rem !important;
+}
+
+#company-header-image {
+  position: relative;
+  max-width: 2000px;
+  padding-top: 20.1%; /* 400 / 2000 = .2*/
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  background-image: url('https://dummyimage.com/2000x400/ababab/ffffff.jpg&text=2000+x+400');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+}

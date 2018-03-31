@@ -1,0 +1,69 @@
+
+*, *::before, *::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 100% !important;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: table;
+}
+
+img {
+	 height: auto;
+	 max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 72rem;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body p {
+  font-size: 18px;
+  line-height: 1.5rem;
+}
+
+/* ------ internal pages flexbox css ------- */
+
+.products-flexbox-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.products-photo-flexbox {
+  width: 38%;
+  padding: 2rem;
+}
+
+.products-flexbox {
+  width: 58%;
+  padding: 2rem;
+}
+
+.products-text-header {
+  margin-top: 0;
+  font-size: 40px;
+}
+
+.products-flexbox-container.bottom-margin {
+  margin-bottom: 4rem;
+}
