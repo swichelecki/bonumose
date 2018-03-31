@@ -28,7 +28,7 @@ class AdminNews extends Component {
     }
 
    /*
-    * @desc sets header and url on initial form and calls formChangeCallback to keep in sync
+    * @desc sets header and url in state and calls formChangeCallback to keep in sync
     */
 
     handleFormChange(event) {
@@ -48,7 +48,7 @@ class AdminNews extends Component {
     }
 
    /*
-    * @desc sets Quill value to this.state.text on initial form
+    * @desc sets Quill value to this.state.text
     */
 
     handleQuillChange(value) {
@@ -168,10 +168,11 @@ class AdminNews extends Component {
     * @desc fills state with values of news item that is to be edited
     */
 
-    editNewsItem(header, text, url, key) {
+    editNewsItem(header, date, text, url, key) {
 
       this.setState({
         header: header,
+        date: date,
         text: text,
         url: url,
         key: key
@@ -206,6 +207,7 @@ class AdminNews extends Component {
 
       this.setState({
         header: '',
+        date: '',
         text: '',
         url: '',
         key: '',
@@ -230,6 +232,7 @@ class AdminNews extends Component {
           this.setState({
             display: 'none',
             header: '',
+            date: '',
             text: '',
             url: '',
             key: ''
@@ -365,7 +368,7 @@ class ManageNews extends Component {
             return(
               <div key={index}>
                 <h3>{news.header}</h3>
-                <button onClick={() => {this.props.editNews(news.header, news.text, news.url, news.key); this.props.openForm();}}>Edit</button>
+                <button onClick={() => {this.props.editNews(news.header, news.date, news.text, news.url, news.key); this.props.openForm();}}>Edit</button>
                 <button onClick={() => this.props.deleteNewsItem(news.key)}>Delete</button>
               </div>
             );
