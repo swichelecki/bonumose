@@ -83,7 +83,7 @@ class Header extends Component {
             url = "url('/images/2000/sugar_2000_1.jpg')";
       } else {
           url = "url('/images/2000/apples_2000_no_blur.jpg')";
-          padding = '22.5%';
+          padding = '22.6%';
       }
 
       let headerText;
