@@ -16,15 +16,15 @@ class Natural extends Component {
 
       return(
         <div>
-        <div id="natural-header-image">
-          <p id="natural-header-image-text">
+      {/*  <div id="natural-header-image">
+          <div id="natural-header-image-text">
             Natural enzymes enable the mass production of healthy rare sugars
-          </p>
-        </div>
+          </div>
+        </div> */}
         <div className="container">
           <div className="products-flexbox-container">
             <div className="products-photo-flexbox">
-              <img src="https://dummyimage.com/400x500/ababab/f7f7f7.jpg&text=400x500"/>
+              <img src="/images/400/400_500_corn.jpg"/>
             </div>
             <div className="products-flexbox">
               <p className="products-text-header">Naturally Occuring</p>
@@ -50,7 +50,7 @@ class Natural extends Component {
             </p>
           </div>
           <div className="products-photo-flexbox">
-            <img src="https://dummyimage.com/400x500/ababab/f7f7f7.jpg&text=400x500"/>
+            <img src="/images/400/400_500_potatoes.jpg"/>
           </div>
         </div>
         </div>

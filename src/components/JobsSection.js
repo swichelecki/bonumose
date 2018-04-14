@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, BrowserRouter } from 'react-router-dom';
 import * as firebase from 'firebase';
 import _ from 'lodash';
 
@@ -53,7 +54,7 @@ class JobsSection extends Component {
                 <p className="news-date-posted">{job.date}</p>
                 <p className="news-body-text-container" dangerouslySetInnerHTML={{__html: job.text}}>
                 </p>
-                &nbsp;<span className="anchor-underline"><a className="news-anchor" href={job.url} target="_blank">Read More <i className="fa fa-angle-right"></i></a></span>
+                &nbsp;<span className="anchor-underline"><Link className="news-anchor" to={job.url}>Read More <i className="fa fa-angle-right"></i></Link></span>
               </div>
             );
 

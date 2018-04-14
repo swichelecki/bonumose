@@ -16,15 +16,10 @@ class Functional extends Component {
 
         return(
           <div>
-          <div id="functional-header-image">
-            <p id="functional-header-image-text">
-              Great tasting and fully functional <span className="functional-move-in">in foods and beverages</span>
-            </p>
-          </div>
           <div className="container">
             <div className="products-flexbox-container">
               <div className="products-photo-flexbox">
-                <img src="https://dummyimage.com/400x500/ababab/f7f7f7.jpg&text=400x500"/>
+                <img src="/images/400/400_500_icecream.jpg"/>
               </div>
               <div className="products-flexbox">
                 <p className="products-text-header">Great Tasting</p>
@@ -56,7 +51,7 @@ class Functional extends Component {
               </p>
             </div>
             <div className="products-photo-flexbox">
-              <img src="https://dummyimage.com/400x500/ababab/f7f7f7.jpg&text=400x500"/>
+              <img src="/images/400/400_500_cookies.jpg"/>
             </div>
             </div>
           </div>

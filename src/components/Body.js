@@ -18,33 +18,33 @@ class Body extends Component {
 
       return(
         <div>
-          <div id="header-image">
+        {/*}  <div id="header-image">
             <p id="header-image-text">
-              <strong><span className="header-rare-relative"><span className="header-rare-absolute">Rare Sugars</span></span></strong><br /><span className="header-are-relative"><span className="header-are-absolute">are</span></span><br /><strong>Good for You</strong>
+              <span className="header-rare-relative"><span className="header-rare-absolute">Rare Sugars</span></span><br /><span className="header-are-relative"><span className="header-are-absolute">are</span></span><br /><span className="good-for-you">Good for You</span>
             </p>
-          </div>
+          </div> */}
           <div className="container">
             <p className="body-header">Good for You Sugars</p>
             <div className="flexbox-container">
               <div className="flexbox">
                 <HashLink to="/products#tagatose">
-                  <img className="body-product-image" src="https://dummyimage.com/175x150/ababab/ffffff.jpg&text=175+x+150" />
-                  <h2 className="home-flex-title">Tagatose</h2>
-                  <p className="home-flex-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                  <img className="body-product-image" src="/images/tagatose.png" />
+                  <p className="home-flex-title">Tagatose</p>
+                  <p className="home-flex-info">Tagatose is not like other sugars. Tagatose is good-for-you sugar. It is a delicious <em>rare</em> sugar occurring in tiny quantities in some fruits and grains. </p>
                   <p className="home-flex-learn">Learn More</p>
                 </HashLink>
               </div>
               <div className="flexbox">
                 <HashLink to="/products#allulose">
-                  <img className="body-product-image" src="https://dummyimage.com/175x150/ababab/ffffff.jpg&text=175+x+150" />
-                  <h2 className="home-flex-title">Allulose</h2>
-                  <p className="home-flex-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                  <img className="body-product-image" src="/images/psicose.png" />
+                  <p className="home-flex-title">Allulose</p>
+                  <p className="home-flex-info">Allulose also is a good-for-you, <em>rare</em> sugar. Like Tagatose, Allulose works really well in all sweetened foods and beverages. </p>
                   <p className="home-flex-learn">Learn More</p>
                 </HashLink>
               </div>
             </div>
-            <Natural />
           </div>
+          <Natural />
           <Rectangles/>
         </div>
       );
@@ -57,9 +57,11 @@ class Natural extends Component {
 
         return(
           <div id="natural-wrapper">
-              <p className="body-header">Naturally Occurring</p>
-              <p>Tagatose and allulose are naturally occurring, healthy rare sugars. We produce the good-for-you sugars from globally abundant plant material.</p>
-              <Link to='/naturally-occurring' className="learn-more-a">Learn More</Link>
+              <div className="container">
+                <p className="natural-header">Naturally Occurring</p>
+                <p className="natuarl-p">Tagatose and allulose are naturally occurring, healthy rare sugars. We produce the good-for-you sugars from globally abundant plant material.</p>
+                <Link to='/naturally-occurring' className="learn-more-a">Learn More</Link>
+              </div>
           </div>
         );
     }

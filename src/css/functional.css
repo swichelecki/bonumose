@@ -1,7 +1,7 @@
-#functional-header-image {
+/*#functional-header-image {
   position: relative;
   max-width: 2000px;
-  padding-top: 30%; /* 600 / 2000 = .3*/
+  padding-top: 30%;
   margin: 0 auto;
   background-image: url('https://dummyimage.com/2000x550/ababab/ffffff.jpg&text=2000+x+550');
   background-repeat: no-repeat;
@@ -9,16 +9,17 @@
   background-position: top center;
 }
 
-p#functional-header-image-text {
+div#functional-header-image-text {
   position: absolute;
-  top: 10%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, 0);
-  font-size: 3.5vw;
+  font-size: 3.2vw;
   line-height: normal;
+  text-shadow: 0px 0px 10px #2a2a2a;
 }
 
 .functional-move-in {
   position: relative;
   left: 13%;
-}
+} */

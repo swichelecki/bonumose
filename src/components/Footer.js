@@ -39,27 +39,27 @@ class Footer extends Component {
           <div className="footer-div-three">
             <ul className="footer-ul">
               <li><strong>Products:</strong></li>
-              <li><HashLink to="products#tagatose">Tagatose</HashLink></li>
-              <li><HashLink to="products#allulose">Allulose</HashLink></li>
+              <li><HashLink to="/products#tagatose">Tagatose</HashLink></li>
+              <li><HashLink to="/products#allulose">Allulose</HashLink></li>
             </ul>
           </div>
           <div className="footer-div-three">
             <ul className="footer-ul">
               <li><strong>Overview:</strong></li>
-              <li><HashLink to="naturally-occurring#top">Natural</HashLink></li>
-              <li><HashLink to="affordable#healthy">Healthy</HashLink></li>
-              <li><HashLink to="affordable#top">Affordable</HashLink></li>
-              <li><HashLink to="functional#top">Delicious</HashLink></li>
-              <li><HashLink to="functional#functional">Functional</HashLink></li>
+              <li><HashLink to="/naturally-occurring#top">Natural</HashLink></li>
+              <li><HashLink to="/affordable#healthy">Healthy</HashLink></li>
+              <li><HashLink to="/affordable#top">Affordable</HashLink></li>
+              <li><HashLink to="/functional#top">Delicious</HashLink></li>
+              <li><HashLink to="/functional#functional">Functional</HashLink></li>
             </ul>
           </div>
           <div className="footer-div-three">
             <ul className="footer-ul">
               <li><strong>About:</strong></li>
-              <li><HashLink to="company#top">Company</HashLink></li>
-              <li><HashLink to="company#team">Team</HashLink></li>
-              <li><HashLink to="news#top">News</HashLink></li>
-              <li><HashLink to="news#employment">Employment</HashLink></li>
+              <li><HashLink to="/company#top">Company</HashLink></li>
+              <li><HashLink to="/company#team">Team</HashLink></li>
+              <li><HashLink to="/news#top">News</HashLink></li>
+              <li><HashLink to="/news#employment">Employment</HashLink></li>
             </ul>
           </div>
           <div className="footer-div-three">

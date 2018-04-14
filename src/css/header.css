@@ -1,32 +1,99 @@
 #header-container {
   max-width: 2000px;
+}
 
+#header-image {
+  position: relative;
+  max-width: 2000px;
+  padding-top: 32.6%; /*650 / 2000 = .325*/
+  margin: 0 auto;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+}
+
+div#header-image-text-home.header-are-relative {
+  position: relative;
+}
+
+.header-are-absolute {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-weight: 300;
+}
+
+div#header-image-text-home.header-rare-relative {
+  position: relative;
+}
+
+.header-rare-absolute {
+  position: absolute;
+  left: 16px;
+  font-weight: 400;
+}
+
+.good-for-you{
+  font-weight: 400;
+}
+
+div#header-image-text {
+  position: absolute;
+  top: 110px;
+  /*top: 20%;*/
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 3.1vw;
+  line-height: normal;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 0px 0px 10px #2a2a2a;
+}
+
+.products-move-occurring {
+  position: relative;
+  left: 5%;
+}
+
+.functional-move-in {
+  position: relative;
+  left: 15.5%;
+}
+
+.affordable-move-occurring {
+  position: relative;
+  left: 5%;
 }
 
 header {
-  position: relative;
-  padding: .5rem 2rem 0rem 2rem;
-  z-index: 3;
-  box-shadow: 0px 2px 5px 0px #666;
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  right: 0;
+  background-color: transparent;
 }
 
 header h1 {
   display: inline-block;
-  font-size: 55px;
+  font-size: 35px;
   margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
 }
 
 header h1#header-name a {
   text-decoration: none;
   cursor: pointer;
-  color: #000000;
+  color: #fff;
 }
 
 nav {
   position: relative;
   top: -5px;
   display: inline-block;
-  margin-left: 10%;
+  margin-left: 1%;
 }
 
 ul#header-ul {
@@ -44,19 +111,20 @@ ul#header-ul li {
   display: inline;
   text-align: center;
   padding: 0 .8rem 0 1rem;
-  font-size: 22px;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 ul#header-ul li a {
   text-decoration: none;
-  color: #000000;
+  color: #fff;
   cursor: pointer;
 }
 
 ul.header-ul-block {
   position: absolute;
   z-index: 1;
-  top: 16px;
+  top: 18px;
   left: 0;
   list-style: none;
   padding-left: 0;
@@ -65,7 +133,8 @@ ul.header-ul-block {
 
 ul.header-ul-block li {
   padding: 0 1rem 0 1rem;
-  font-size: 22px;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .fa-angle-down {
@@ -78,15 +147,19 @@ ul.header-ul-block li.absolute-li {
   background-color: #fff;
 }
 
-ul.header-ul-block li.border-top {
-  padding-bottom: .3rem;
-  border-bottom: 2px solid #666;
-}
-
 ul.header-ul-block li a {
   text-decoration: none;
-  color: #000000;
+  color: #fff;
   cursor: pointer;
+}
+
+ul.header-ul-block li.absolute-li a{
+  color: #2a2a2a;
+}
+
+ul.header-ul-block li.absolute-li a:hover {
+  /*color: #8BC34A;*/
+  color: #8bcf00;
 }
 
 .relative-div {
@@ -99,9 +172,9 @@ ul.header-ul-block li a {
 ul.header-ul-block-about {
   position: absolute;
   z-index: 2;
-  top: 16px;
-  right: 1px;
-  width: 10rem;
+  top: 18px;
+  left: -20px;
+  width: 8rem;
   list-style: none;
   padding-left: 0;
   margin: 0;
@@ -109,7 +182,8 @@ ul.header-ul-block-about {
 
 ul.header-ul-block-about li {
   padding: 0 1rem 0 1rem;
-  font-size: 22px;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 ul.header-ul-block-about li.absolute-li {
@@ -118,14 +192,18 @@ ul.header-ul-block-about li.absolute-li {
   background-color: #fff;
 }
 
-ul.header-ul-block-about li.border-top {
-  padding-bottom: .3rem;
-  border-bottom: 2px solid #666;
+ul.header-ul-block-about li.absolute-li a{
+  color: #2a2a2a;
+}
+
+ul.header-ul-block-about li.absolute-li a:hover {
+  /*color: #8BC34A;*/
+  color: #8bcf00;
 }
 
 ul.header-ul-block-about li a {
   text-decoration: none;
-  color: #000000;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -146,7 +224,7 @@ ul#header-products-ul li {
 
 ul#header-products-ul li a {
   text-decoration: none;
-  color: #000000;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -155,18 +233,18 @@ ul#header-ul-social {
   padding-left: 0;
   position: absolute;
   right: 1rem;
-  top: .9rem;
+  top: -.6rem;
 }
 
 ul#header-ul-social li {
   display: inline;
   text-align: center;
-  padding: 0 1rem 0 1rem;
+  padding: 0 1.3rem 0 0rem;
 }
 
 ul#header-ul-social li a i{
   text-decoration: none;
   cursor: pointer;
-  color: #000000;
-  font-size: 26px;
+  color: #fff;
+  font-size: 30px;
 }

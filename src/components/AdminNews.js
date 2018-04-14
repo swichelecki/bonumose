@@ -83,22 +83,31 @@ class AdminNews extends Component {
           break;
         case 4:
           month = 'April';
+          break;
         case 5:
           month = 'May';
+          break;
         case 6:
           month = 'June';
+          break;
         case 7:
           month = 'July';
+          break;
         case 8:
           month = 'August';
+          break;
         case 9:
           month = 'September';
+          break;
         case 10:
           month = 'October';
+          break;
         case 11:
           month = 'November';
+          break;
         case 12:
           month = 'December';
+          break;
         default:
           month = 'not a month';
 
@@ -121,7 +130,10 @@ class AdminNews extends Component {
       var newsDatabaseRef = firebase.database().ref('news');
       var newsCreate = newsDatabaseRef.push();
 
-      newsCreate.update(this.state);
+      let newsObject = this.state;
+      delete newsObject.newsArray;
+
+      newsCreate.update(newsObject);
 
       this.setState({
         header: '',
@@ -287,7 +299,7 @@ class AdminNews extends Component {
               cancelEdit={this.openCloseForm}
               displayProp={this.state.display}
             />
-            <h2>Manage News Items</h2>
+            <h2 className="admin-manage">Manage News Items</h2>
             <ManageNews newsArray={this.state.newsArray}
               deleteNewsItem={this.confirmDelete}
               editNews={this.editNewsItem}
@@ -315,13 +327,13 @@ class NewsForm extends Component {
             <form onSubmit={this.props.onFormSubmit}>
               <h2>Add News Item</h2>
               <label>Header:<br/>
-                <input type="text" name="header" value={this.props.formValue.header} onChange={this.props.onFormChange}/>
+                <input className="input-header" type="text" name="header" value={this.props.formValue.header} onChange={this.props.onFormChange}/>
               </label>
               <label>Text:<br/>
                 <ReactQuill value={this.props.formValue.text} onChange={this.props.onQuillChange}/>
               </label>
               <label>Read More URL:<br/>
-                <input type="text" name="url" value={this.props.formValue.url} onChange={this.props.onFormChange}/>
+                <input className="input-url" type="text" name="url" value={this.props.formValue.url} onChange={this.props.onFormChange}/>
               </label>
               <input type="submit" value="Submit"/>
             </form>
@@ -342,13 +354,13 @@ class EditNewsForm extends Component {
             <form onSubmit={this.props.onFormSubmit}>
               <h2>Edit News Item</h2>
               <label>Header:<br/>
-                <input type="text" name="header" value={this.props.editFormValue.header} onChange={this.props.onFormChange}/>
+                <input className="input-header" type="text" name="header" value={this.props.editFormValue.header} onChange={this.props.onFormChange}/>
               </label>
               <label>Text:
                 <ReactQuill value={this.props.editFormValue.text} onChange={this.props.onQuillChange}/>
               </label>
               <label>Read More URL:<br/>
-                <input type="text" name="url" value={this.props.editFormValue.url} onChange={this.props.onFormChange}/>
+                <input className="input-url" type="text" name="url" value={this.props.editFormValue.url} onChange={this.props.onFormChange}/>
               </label>
               <input type="submit" value="Submit"/>
             </form>
@@ -376,7 +388,7 @@ class ManageNews extends Component {
       }
 
       return(
-        <div>
+        <div className="admin-bottom-padding">
         {newsItem}
         </div>
       );

@@ -12,13 +12,16 @@ class AdminJobs extends Component {
       this.handleFormSubmit = this.handleFormSubmit.bind(this);
       this.confirmDelete = this.confirmDelete.bind(this);
       this.deleteJob = this.deleteJob.bind(this);
+      this.openCloseForm = this.openCloseForm.bind(this);
+      this.editJobPost = this.editJobPost.bind(this);
+      this.handleEditFormSubmit = this.handleEditFormSubmit.bind(this);
       this.state = {
           header: '',
           text: '',
           url: '',
           date: '',
           key: '',
-          display: '',
+          display: 'none',
           jobsArray: []
       };
     }
@@ -158,13 +161,93 @@ class AdminJobs extends Component {
       let jobsDatabaseRef = firebase.database().ref('jobs');
       let jobsCreate = jobsDatabaseRef.push();
 
-      jobsCreate.update(this.state);
+      let jobObject = this.state;
+      delete jobObject.jobsArray
+
+      jobsCreate.update(jobObject);
 
       this.setState({
         header: '',
         text: '',
         url: '',
         date: ''
+      });
+
+      window.scrollTo(0,0);
+
+    }
+
+   /*
+    * @desc shows and hides forms based on display value
+    */
+
+    openCloseForm() {
+
+       if (this.state.display === 'none') {
+          this.setState({
+            display: 'block'
+          });
+       } else {
+         this.setState({
+           display: 'none',
+           header: '',
+           date: '',
+           text: '',
+           url: '',
+           key: ''
+         });
+       }
+
+       window.scrollTo(0,0);
+    }
+
+   /*
+    * @desc fills state with values of job post that is to be edited
+    */
+
+    editJobPost(header, date, text, url, key) {
+
+        this.setState({
+          header: header,
+          date: date,
+          text: text,
+          url: url,
+          key: key
+        });
+    }
+
+   /*
+    * @desc updates database record for edited job post
+    */
+
+    handleEditFormSubmit(event) {
+
+      event.preventDefault();
+
+      let editedJobsObject = this.state;
+      delete editedJobsObject.jobsArray;
+
+      let key = editedJobsObject.key;
+
+      let jobPostToUpdate = firebase.database().ref().child('jobs').child(key);
+
+      jobPostToUpdate.once('value', function(snapshot){
+
+          if(snapshot.val() === null) {
+            alert('Item does not exist');
+          } else {
+            jobPostToUpdate.update(editedJobsObject);
+          }
+      });
+
+      this.setState({
+        header: '',
+        date: '',
+        text: '',
+        url: '',
+        key: '',
+        display: 'none'
+
       });
 
       window.scrollTo(0,0);
@@ -205,11 +288,22 @@ class AdminJobs extends Component {
             onQuillChange={this.handleQuillChange}
             formValue={this.state}
             onFormSubmit={this.setDate}
+            displayProp={this.state.display}
             />
-            <h2>Manage Job Postings</h2>
+            <EditJobForm
+            onFormChange={this.handleFormChange}
+            onQuillChange={this.handleQuillChange}
+            formValue={this.state}
+            onFormSubmit={this.handleEditFormSubmit}
+            cancelEdit={this.openCloseForm}
+            displayProp={this.state.display}
+            />
+            <h2 className="admin-manage">Manage Job Postings</h2>
             <ManageJobs
             jobsObject={this.state.jobsArray}
             deleteJobItem={this.confirmDelete}
+            editJob={this.editJobPost}
+            openForm={this.openCloseForm}
             />
           </div>
         );
@@ -220,24 +314,61 @@ class JobsForm extends Component {
 
     render() {
 
+      const displayValue = this.props.displayProp;
+
+      let formDisplay = null;
+
+      formDisplay = (displayValue == 'none') ? formDisplay = 'block' : formDisplay = 'none';
+
+      const displayStyle = {display: formDisplay};
+
         return(
-          <div>
+          <div style={displayStyle}>
             <form onSubmit={this.props.onFormSubmit}>
               <h2>Add Job Posting</h2>
               <label>Header:<br/>
-                <input type="text" name="header" value={this.props.formValue.header} onChange={this.props.onFormChange}/>
+                <input className="input-header" type="text" name="header" value={this.props.formValue.header} onChange={this.props.onFormChange}/>
               </label>
               <label>Text:<br/>
                 <ReactQuill value={this.props.formValue.text} onChange={this.props.onQuillChange}/>
               </label>
-              <label>
-                <input type="text" name="url" value={this.props.formValue.url} onChange={this.props.onFormChange}/>
+              <label>Read More URL:<br/>
+                <input className="input-url" type="text" name="url" value={this.props.formValue.url} onChange={this.props.onFormChange}/>
               </label>
                 <input type="submit" value="Submit"/>
             </form>
           </div>
         );
     }
+}
+
+class EditJobForm extends Component {
+
+    render() {
+
+        const displayValue = this.props.displayProp;
+        const displayStyle = {display: displayValue};
+
+        return(
+          <div style={displayStyle}>
+            <form onSubmit={this.props.onFormSubmit}>
+              <h2>Edit Job Posting</h2>
+              <label>Header:<br/>
+                <input className="input-header" type="text" name="header" value={this.props.formValue.header} onChange={this.props.onFormChange}/>
+              </label>
+              <label>Text:<br/>
+                <ReactQuill value={this.props.formValue.text} onChange={this.props.onQuillChange}/>
+              </label>
+              <label>Read More URL:<br/>
+                <input className="input-url" type="text" name="url" value={this.props.formValue.url} onChange={this.props.onFormChange}/>
+              </label>
+              <input type="submit" value="Submit"/>
+            </form>
+              <button className="cancel-button" onClick={this.props.cancelEdit}>Cancel</button>
+          </div>
+        );
+    }
+
 }
 
 class ManageJobs extends Component {
@@ -250,7 +381,7 @@ class ManageJobs extends Component {
             return(
               <div key={index}>
                 <h3>{job.header}</h3>
-                <button>Edit</button>
+                <button onClick={() => {this.props.editJob(job.header, job.date, job.text, job.url, job.key); this.props.openForm()}}>Edit</button>
                 <button onClick={() => this.props.deleteJobItem(job.key)}>Delete</button>
               </div>
             );
@@ -259,7 +390,7 @@ class ManageJobs extends Component {
       }
 
         return(
-          <div>{jobItem}</div>
+          <div className="admin-bottom-padding">{jobItem}</div>
         );
     }
 }

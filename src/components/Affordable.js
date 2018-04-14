@@ -18,15 +18,10 @@ class Affordable extends Component {
 
         return(
           <div id="affordable">
-          <div id="affordable-header-image">
-            <p id="affordable-header-image-text">
-              Robert Frost said, “Something there is that doesn’t love a wall”
-            </p>
-          </div>
           <div className="container">
             <div className="products-flexbox-container">
               <div className="products-photo-flexbox">
-                <img src="https://dummyimage.com/400x500/ababab/f7f7f7.jpg&text=400x500"/>
+                <img src="images/400/400_500_money.jpg"/>
               </div>
               <div className="products-flexbox">
                 <p className="products-text-header">Affordable</p>
@@ -73,7 +68,7 @@ class Affordable extends Component {
               </p>
             </div>
             <div className="products-photo-flexbox">
-              <img src="https://dummyimage.com/400x500/ababab/f7f7f7.jpg&text=400x500"/>
+              <img src="/images/400/400_500_healthy.jpg"/>
             </div>
           </div>
           </div>

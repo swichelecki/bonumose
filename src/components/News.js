@@ -21,8 +21,6 @@ class News extends Component {
 
         return(
           <div>
-            <div id="news-header-image">
-            </div>
             <div className="container company-bottom-margin">
               <p className="company-text-header">
                 News

@@ -1,6 +1,9 @@
 #footer-wrapper {
-  background-color: #ababab;
+  background-color: #8eb93a;
+  /*background-color: #8BC34A;*/
+  /*background-color: #8bcf00;*/
   padding-bottom: 4rem;
+  color: #fff;
 }
 
 .footer-div-one {
@@ -12,7 +15,7 @@
 .footer-div-two {
   padding: 2rem 2rem 2rem 0;
   display: inline-block;
-  line-height: 1.3rem;
+  line-height: 1.5rem;
 }
 
 .footer-div-three {
@@ -25,13 +28,13 @@
 h2#footer-name {
   margin: 0;
   display: inline-block;
-  color: #000;
+  color: #fff;
 }
 
 .footer-icon a i.fa.fa-twitter-square {
   text-decoration: none;
   cursor: pointer;
-  color: #000000;
+  color: #fff;
   font-size: 22px;
   margin: 0 10px 0 10px;
 }
@@ -39,7 +42,7 @@ h2#footer-name {
 .footer-icon a i.fa.fa-linkedin {
   text-decoration: none;
   cursor: pointer;
-  color: #000000;
+  color: #fff;
   font-size: 22px;
 }
 
@@ -51,12 +54,17 @@ h2#footer-name {
 }
 
 .footer-ul li {
-    line-height: 1.5rem;
+    line-height: 2rem;
 }
 
 .footer-ul li a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
+}
+
+.footer-ul li a:hover {
+  /*color: #388E3C;*/
+  color: #2a2a2a;
 }
 
 .afforadable-li {

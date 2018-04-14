@@ -20,15 +20,10 @@ class Products extends Component {
 
         return(
           <div>
-          <div id="product-header-image">
-            <p id="product-header-image-text">
-              Tagatose and Allulose are naturally <span className="products-move-occurring">occuring, delicious <em>rare</em> sugars</span>
-            </p>
-          </div>
           <div className="container">
             <div id="tagatose" className="products-flexbox-container">
               <div className="products-photo-flexbox">
-                <img src="https://dummyimage.com/400x500/ababab/f7f7f7.jpg&text=400x500"/>
+                <img src="images/tagatose.png"/>
               </div>
               <div className="products-flexbox">
                 <p className="products-text-header">Tagatose</p>
@@ -60,7 +55,7 @@ class Products extends Component {
               </p>
             </div>
             <div className="products-photo-flexbox">
-              <img src="https://dummyimage.com/400x500/ababab/f7f7f7.jpg&text=400x500"/>
+              <img src="images/psicose.png"/>
             </div>
           </div>
           </div>

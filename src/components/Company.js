@@ -16,8 +16,8 @@ class Company extends Component {
 
         return(
           <div>
-          <div id="company-header-image">
-          </div>
+          {/*<div id="company-header-image">
+          </div>*/}
           <div className="container company-bottom-margin">
             <p className="company-text-header">
               Bonumose Overview
