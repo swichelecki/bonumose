@@ -65,9 +65,10 @@ module.exports = {
                 {
                   loader: 'file-loader',
                   options: {
-                    name: '[path][name].[ext]',
-                    outputPath: 'images/',
-                    publicPath: 'images/'
+                    context: path.resolve(__dirname, "./src"),
+                    name (file) {
+                      return '[path][name].[ext]'
+                    }
                   }
                 }
               ]
