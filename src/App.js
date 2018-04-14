@@ -23,6 +23,24 @@ import './css/functional.css';
 import './css/company.css';
 import './css/news.css';
 import './css/admin.css';
+import './images/psicose.png';
+import './images/tagatose.png';
+import './images/2000/apples_2000_1.jpg';
+import './images/2000/apples_2000_no_blur.jpg';
+import './images/2000/cookies_2000_1.jpg';
+import './images/2000/corn_2000_1.jpg';
+import './images/2000/money_2000_1.jpg';
+import './images/2000/sugar_2000_1.jpg';
+import './images/500/500_450_cookies.jpg';
+import './images/500/500_450_exercise.jpg';
+import './images/500/500_450_icecream.jpg';
+import './images/500/500_450_money.jpg';
+import './images/400/400_500_cookies.jpg';
+import './images/400/400_500_corn.jpg';
+import './images/400/400_500_healthy.jpg';
+import './images/400/400_500_icecream.jpg';
+import './images/400/400_500_money.jpg';
+import './images/400/400_500_potatoes.jpg';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
