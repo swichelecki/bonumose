@@ -13,7 +13,7 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 var extractPlugin = new ExtractTextPlugin({
     filename: '[name].css',
     allChunks: true,
-    disable: true
+    disable: false
 });
 
 module.exports = {
@@ -25,7 +25,7 @@ module.exports = {
         filename: '[name].bundle.js',
         publicPath: '/'
     },
-      watch: true,
+    /*  watch: true,
       devServer: {
           contentBase: __dirname + "/src",
           filename: '.dist/[name].bundle.js',
@@ -33,7 +33,7 @@ module.exports = {
           host: '0.0.0.0',
           port: 8080,
           historyApiFallback: true
-      },
+      },*/
     module: {
       rules: [
           {
