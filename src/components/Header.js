@@ -90,6 +90,7 @@ class Header extends Component {
       if (path == '') {
             headerText = (
               <div id="header-image-text">
+                {/*Rare Sugars are Good for You*/}
                 <span className="header-rare-relative"><span className="header-rare-absolute">Rare Sugars</span></span><br /><span className="header-are-relative"><span className="header-are-absolute">are</span></span><br /><span className="good-for-you">Good for You</span>
               </div>
             )

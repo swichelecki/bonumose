@@ -18,11 +18,6 @@ class Body extends Component {
 
       return(
         <div>
-        {/*}  <div id="header-image">
-            <p id="header-image-text">
-              <span className="header-rare-relative"><span className="header-rare-absolute">Rare Sugars</span></span><br /><span className="header-are-relative"><span className="header-are-absolute">are</span></span><br /><span className="good-for-you">Good for You</span>
-            </p>
-          </div> */}
           <div className="container">
             <p className="body-header">Good for You Sugars</p>
             <div className="flexbox-container">
