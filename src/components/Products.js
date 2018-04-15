@@ -40,7 +40,7 @@ class Products extends Component {
           </div>
           <div id="allulose" className="products-flexbox-container bottom-margin">
             <div className="products-flexbox">
-              <p className="products-text-header">Allulose</p>
+              <p className="products-text-header-two">Allulose</p>
               <p>
               Allulose is a delicious rare sugar. Allulose is approximately 70% as sweet as sucrose (table sugar), without any bitter notes or off-flavors. Like tagatose, allulose works really well in all sweetened foods and beverages, in full or partial replacement of sucrose and high-fructose corn syrup.
               </p>
@@ -54,7 +54,7 @@ class Products extends Component {
               The good folks at <span className="anchor-underline"><a href="https://www.questnutrition.com/" target="_blank">Quest Nutrition</a></span> created an informative, short <span className="anchor-underline"><a href="https://www.youtube.com/watch?v=IlGMliuTVYk&feature=youtu.be" target="_blank">video about allulose</a></span>.
               </p>
             </div>
-            <div className="products-photo-flexbox">
+            <div className="products-photo-flexbox-two">
               <img src="images/psicose.png"/>
             </div>
           </div>

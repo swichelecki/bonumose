@@ -61,7 +61,7 @@ body {
 
 .products-photo-flexbox {
   width: 38%;
-  padding: 6.5rem 2rem 2rem 2rem;
+  padding: 8.5rem 2rem 2rem 2rem;
 }
 
 .products-flexbox {
@@ -70,8 +70,18 @@ body {
 }
 
 .products-text-header {
-  margin-top: 0;
   font-size: 40px;
+  margin-top: 30px;
+}
+
+.products-text-header-two {
+  font-size: 40px;
+  margin-top: 0px;
+}
+
+.products-photo-flexbox-two {
+  width: 38%;
+  padding: 6.5rem 2rem 2rem 2rem;
 }
 
 .products-flexbox-container.bottom-margin {

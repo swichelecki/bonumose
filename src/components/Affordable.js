@@ -35,7 +35,7 @@ class Affordable extends Component {
           </div>
           <div id="healthy" className="products-flexbox-container bottom-margin">
             <div className="products-flexbox">
-              <p className="products-text-header">Healthy</p>
+              <p className="products-text-header-two">Healthy</p>
               <p>
               Tagatose and allulose are healthy and still great tasting:
               </p>
@@ -67,7 +67,7 @@ class Affordable extends Component {
               Tagatose and allulose are not just not bad for you. They are good for you. Beyond benign, they are beneficial.
               </p>
             </div>
-            <div className="products-photo-flexbox">
+            <div className="products-photo-flexbox-two">
               <img src="/images/400/400_500_healthy.jpg"/>
             </div>
           </div>

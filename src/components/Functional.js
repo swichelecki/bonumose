@@ -36,7 +36,7 @@ class Functional extends Component {
             </div>
             <div id="functional" className="products-flexbox-container bottom-margin">
               <div className="products-flexbox">
-              <p className="products-text-header">Functional</p>
+              <p className="products-text-header-two">Functional</p>
               <p>
               Sweetness is but one of the positive features of sucrose (regular sugar). It also provides bulk and structure for foods, reduces water activity to help prevent food spoilage, depresses freezing temperature to make ice cream smooth, caramelizes, and does a variety of other things.
               </p>
@@ -50,7 +50,7 @@ class Functional extends Component {
               Unlike other sugar alternatives, tagatose and allulose are fully functional in foods and beverages.
               </p>
             </div>
-            <div className="products-photo-flexbox">
+            <div className="products-photo-flexbox-two">
               <img src="/images/400/400_500_cookies.jpg"/>
             </div>
             </div>

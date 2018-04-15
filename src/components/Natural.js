@@ -16,11 +16,6 @@ class Natural extends Component {
 
       return(
         <div>
-      {/*  <div id="natural-header-image">
-          <div id="natural-header-image-text">
-            Natural enzymes enable the mass production of healthy rare sugars
-          </div>
-        </div> */}
         <div className="container">
           <div className="products-flexbox-container">
             <div className="products-photo-flexbox">
@@ -41,7 +36,7 @@ class Natural extends Component {
         </div>
         <div className="products-flexbox-container bottom-margin">
           <div className="products-flexbox">
-            <p className="products-text-header">Enzymes</p>
+            <p className="products-text-header-two">Enzymes</p>
             <p>
             Enzymes occur naturally in foods, and also have been used for millennia to make food such as cheese, yogurt and other foods. Plants use enzymes to convert nutrients into energy and plant mass.
             </p>
@@ -49,7 +44,7 @@ class Natural extends Component {
             Bonumose has unique ability to discover naturally-occurring enzymes to enable the economically and environmentally sustainable mass production of healthy ingredients from globally-abundant plant material.
             </p>
           </div>
-          <div className="products-photo-flexbox">
+          <div className="products-photo-flexbox-two">
             <img src="/images/400/400_500_potatoes.jpg"/>
           </div>
         </div>
