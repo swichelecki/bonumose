@@ -25,9 +25,6 @@ module.exports = {
         filename: '[name].bundle.js',
         publicPath: '/'
     },
-    devServer: {
-      historyApiFallback: true
-    },
       /*watch: true,
       devServer: {
           contentBase: __dirname + "/src",
