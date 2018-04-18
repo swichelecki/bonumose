@@ -11,12 +11,12 @@ p.news-body-text-container {
 
 
 .news-body-text-container p {
-  margin: 0;
   display: inline;
 }
 
 .news-body-text-container a {
   text-decoration: underline;
+  color: #2a2a2a;
 }
 
 .news-anchor:hover {
@@ -41,6 +41,15 @@ p.news-body-text-container {
 i.fa-angle-right {
   font-size: 18px;
   font-weight: 600;
+}
+
+.job-body-text-container p {
+  margin: 0;
+}
+
+.job-body-text-container a {
+  text-decoration: underline;
+  color: #2a2a2a;
 }
 
 .apply-now-wrapper {

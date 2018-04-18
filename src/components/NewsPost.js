@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import _ from 'lodash';
 
-class Employment extends Component {
+class NewsPost extends Component {
     constructor(props) {
       super(props);
       this.showJob = this.showJob.bind(this);
 
       this.state = {
-        jobsArray: [{}],
-        newJobsArray: [{}],
+        newsArray: [{}],
+        newNewsArray: [{}],
         urlParam: this.props.match.params.id
       };
     }
@@ -20,9 +20,9 @@ class Employment extends Component {
 
     componentWillReceiveProps(nextProps) {
 
-      const newSearchTerm = nextProps.match.params.id
-        if(this.state.urlParam !== newSearchTerm) {
-          this.setState(() => ({ urlParam: newSearchTerm }))
+      const SearchTerm = nextProps.match.params.id
+        if(this.state.urlParam !== SearchTerm) {
+          this.setState(() => ({ urlParam: SearchTerm }))
         }
 
     }
@@ -33,7 +33,7 @@ class Employment extends Component {
 
     componentDidMount() {
 
-      let app = firebase.database().ref('jobs');
+      let app = firebase.database().ref('news');
       app.on('value', snapshot => {
         this.getData(snapshot.val());
       });
@@ -56,7 +56,7 @@ class Employment extends Component {
                               })
                               .value();
        this.setState({
-         jobsArray: jobs
+         newsArray: jobs
        }, this.showJob);
 
     }
@@ -68,15 +68,15 @@ class Employment extends Component {
     showJob() {
 
       let urlParam = this.state.urlParam;
-      let path = '/employment/' + urlParam;
-      let jobs = this.state.jobsArray;
+      let path = '/post/' + urlParam;
+      let news = this.state.newsArray;
 
-        for (var i = 0; i < jobs.length; i++) {
+        for (var i = 0; i < news.length; i++) {
 
-          if (path == jobs[i].url) {
+          if (path == news[i].url) {
 
             this.setState({
-              newJobsArray: jobs[i]
+              newNewsArray: news[i]
             });
 
           }
@@ -87,30 +87,21 @@ class Employment extends Component {
 
     render() {
 
-      const subject = (this.state.newJobsArray.header);
-
         return(
           <div>
             <div className="container company-bottom-margin">
               <p className="company-text-header">
-                {this.state.newJobsArray.header}
+                {this.state.newNewsArray.header}
               </p>
               <p className="news-date-posted">
-                {this.state.newJobsArray.date}
+                {this.state.newNewsArray.date}
               </p>
-              <p className="job-body-text-container" dangerouslySetInnerHTML={{__html: this.state.newJobsArray.job}}>
+              <p className="job-body-text-container" dangerouslySetInnerHTML={{__html: this.state.newNewsArray.post}}>
               </p>
-              <div className="apply-now-wrapper">
-                <a href={`mailto:erogers@bonumose.com?subject=Bonumose%20Job%20Application:%20${subject}&body=Please%20attach%20your%20resume%20and%20cover%20letter.`}>
-                  <button className="apply-button">
-                    Apply Now
-                  </button>
-                </a>
-              </div>
             </div>
           </div>
         );
     }
 }
 
-export default Employment;
+export default NewsPost;

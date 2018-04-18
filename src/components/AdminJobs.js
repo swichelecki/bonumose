@@ -15,12 +15,14 @@ class AdminJobs extends Component {
       this.openCloseForm = this.openCloseForm.bind(this);
       this.editJobPost = this.editJobPost.bind(this);
       this.handleEditFormSubmit = this.handleEditFormSubmit.bind(this);
+      this.handleQuillChangeJob = this.handleQuillChangeJob.bind(this);
       this.state = {
           header: '',
           text: '',
           url: '',
           date: '',
           key: '',
+          job: '',
           display: 'none',
           jobsArray: []
       };
@@ -88,6 +90,18 @@ class AdminJobs extends Component {
     }
 
    /*
+    * @desc sets Quill value to this.state.job
+    */
+
+    handleQuillChangeJob(value) {
+
+      this.setState({
+        job: value
+      });
+
+    }
+
+   /*
     * @desc sets this.state.date and calls handleFormSubmit as callback
     */
 
@@ -146,8 +160,15 @@ class AdminJobs extends Component {
 
       today = month + ' ' + dd + ', ' + yyyy;
 
+      let headerString = this.state.header;
+
+      let headerDashed = headerString.replace(/\s+/g, '-').toLowerCase();
+
+      let urlFinal = '/employment/' + headerDashed;
+
       this.setState({
-        date: today
+        date: today,
+        url: urlFinal
       }, this.handleFormSubmit);
 
     }
@@ -170,7 +191,8 @@ class AdminJobs extends Component {
         header: '',
         text: '',
         url: '',
-        date: ''
+        date: '',
+        job: ''
       });
 
       window.scrollTo(0,0);
@@ -194,7 +216,8 @@ class AdminJobs extends Component {
            date: '',
            text: '',
            url: '',
-           key: ''
+           key: '',
+           job: ''
          });
        }
 
@@ -205,14 +228,15 @@ class AdminJobs extends Component {
     * @desc fills state with values of job post that is to be edited
     */
 
-    editJobPost(header, date, text, url, key) {
+    editJobPost(header, date, text, url, key, job) {
 
         this.setState({
           header: header,
           date: date,
           text: text,
           url: url,
-          key: key
+          key: key,
+          job: job
         });
     }
 
@@ -289,6 +313,7 @@ class AdminJobs extends Component {
             formValue={this.state}
             onFormSubmit={this.setDate}
             displayProp={this.state.display}
+            onQuillChangeJob={this.handleQuillChangeJob}
             />
             <EditJobForm
             onFormChange={this.handleFormChange}
@@ -297,6 +322,7 @@ class AdminJobs extends Component {
             onFormSubmit={this.handleEditFormSubmit}
             cancelEdit={this.openCloseForm}
             displayProp={this.state.display}
+            onQuillChangeJob={this.handleQuillChangeJob}
             />
             <h2 className="admin-manage">Manage Job Postings</h2>
             <ManageJobs
@@ -329,11 +355,11 @@ class JobsForm extends Component {
               <label>Header:<br/>
                 <input className="input-header" type="text" name="header" value={this.props.formValue.header} onChange={this.props.onFormChange}/>
               </label>
-              <label>Text:<br/>
+              <label>Short Description:<br/>
                 <ReactQuill value={this.props.formValue.text} onChange={this.props.onQuillChange}/>
               </label>
-              <label>Read More URL:<br/>
-                <input className="input-url" type="text" name="url" value={this.props.formValue.url} onChange={this.props.onFormChange}/>
+              <label>Full Job Description:<br/>
+                <ReactQuill value={this.props.formValue.job} onChange={this.props.onQuillChangeJob}/>
               </label>
                 <input type="submit" value="Submit"/>
             </form>
@@ -356,11 +382,11 @@ class EditJobForm extends Component {
               <label>Header:<br/>
                 <input className="input-header" type="text" name="header" value={this.props.formValue.header} onChange={this.props.onFormChange}/>
               </label>
-              <label>Text:<br/>
+              <label>Short Description:<br/>
                 <ReactQuill value={this.props.formValue.text} onChange={this.props.onQuillChange}/>
               </label>
-              <label>Read More URL:<br/>
-                <input className="input-url" type="text" name="url" value={this.props.formValue.url} onChange={this.props.onFormChange}/>
+              <label>Full Job Description:<br/>
+                <ReactQuill value={this.props.formValue.job} onChange={this.props.onQuillChangeJob}/>
               </label>
               <input type="submit" value="Submit"/>
             </form>
@@ -381,7 +407,7 @@ class ManageJobs extends Component {
             return(
               <div key={index}>
                 <h3>{job.header}</h3>
-                <button onClick={() => {this.props.editJob(job.header, job.date, job.text, job.url, job.key); this.props.openForm()}}>Edit</button>
+                <button onClick={() => {this.props.editJob(job.header, job.date, job.text, job.url, job.key, job.job); this.props.openForm()}}>Edit</button>
                 <button onClick={() => this.props.deleteJobItem(job.key)}>Delete</button>
               </div>
             );

@@ -10,6 +10,7 @@ import Functional from './components/Functional';
 import Company from './components/Company';
 import News from './components/News';
 import Employment from './components/Employment';
+import NewsPost from './components/NewsPost';
 import Admin from './components/Admin';
 import './css/quill.css';
 import './css/app.css';
@@ -82,6 +83,7 @@ class App extends Component {
                   <Route path="/company" component={Company}/>
                   <Route path="/news" component={News}/>
                   <Route path="/employment/:id" component={Employment}/>
+                  <Route path="/post/:id" component={NewsPost}/>
                   <Route path="/admin" component={Admin}/>
                   <Route render={() => <p>404 Page Not Found</p>}/>
                 </Switch>

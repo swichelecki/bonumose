@@ -59,6 +59,8 @@ class JobsSection extends Component {
             );
 
           });
+      } else {
+        jobItem = <h2 className="news-header">We are not hiring at this time.</h2>;
       }
 
             return(

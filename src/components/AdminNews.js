@@ -15,6 +15,7 @@ class AdminNews extends Component {
       this.editNewsItem = this.editNewsItem.bind(this);
       this.openCloseForm = this.openCloseForm.bind(this);
       this.handleEditFormSubmit = this.handleEditFormSubmit.bind(this);
+      this.handleQuillChangePost = this.handleQuillChangePost.bind(this);
 
       this.state = {
           header: '',
@@ -22,6 +23,7 @@ class AdminNews extends Component {
           url: '',
           date: '',
           key: '',
+          post: '',
           display: 'none',
           newsArray: []
       };
@@ -54,6 +56,16 @@ class AdminNews extends Component {
     handleQuillChange(value) {
 
       this.setState({ text: value });
+
+    }
+
+   /*
+    * @desc sets Quill value to this.state.post
+    */
+
+    handleQuillChangePost(value) {
+
+      this.setState({ post: value });
 
     }
 
@@ -116,8 +128,27 @@ class AdminNews extends Component {
 
       today = month + ' ' + dd + ', ' + yyyy;
 
-      this.setState({date: today},
-      this.handleFormSubmit);
+      let url = this.state.url;
+      let headerString = this.state.header;
+
+      if (url == '') {
+
+        let headerDashed = headerString.replace(/\s+/g, '-').toLowerCase();
+
+        let urlFinal = '/news/' + headerDashed;
+
+        this.setState({
+          date: today,
+          url: urlFinal
+        });
+
+      } else {
+
+      this.setState({
+        date: today
+      }, this.handleFormSubmit);
+
+    }
 
     }
 
@@ -139,7 +170,8 @@ class AdminNews extends Component {
         header: '',
         text: '',
         url: '',
-        date: ''
+        date: '',
+        post: ''
       });
 
       window.scrollTo(0,0);
@@ -180,14 +212,15 @@ class AdminNews extends Component {
     * @desc fills state with values of news item that is to be edited
     */
 
-    editNewsItem(header, date, text, url, key) {
+    editNewsItem(header, date, text, url, key, post) {
 
       this.setState({
         header: header,
         date: date,
         text: text,
         url: url,
-        key: key
+        key: key,
+        post: post
       });
 
     }
@@ -223,6 +256,7 @@ class AdminNews extends Component {
         text: '',
         url: '',
         key: '',
+        post: '',
         display: 'none'
       });
 
@@ -247,7 +281,8 @@ class AdminNews extends Component {
             date: '',
             text: '',
             url: '',
-            key: ''
+            key: '',
+            post: ''
           });
       }
 
@@ -290,6 +325,7 @@ class AdminNews extends Component {
               onFormSubmit={this.setDate}
               formValue={this.state}
               displayProp={this.state.display}
+              onQuillChangePost={this.handleQuillChangePost}
             />
             <EditNewsForm
               onFormChange={this.handleFormChange}
@@ -298,6 +334,7 @@ class AdminNews extends Component {
               editFormValue={this.state}
               cancelEdit={this.openCloseForm}
               displayProp={this.state.display}
+              onQuillChangePost={this.handleQuillChangePost}
             />
             <h2 className="admin-manage">Manage News Items</h2>
             <ManageNews newsArray={this.state.newsArray}
@@ -329,11 +366,14 @@ class NewsForm extends Component {
               <label>Header:<br/>
                 <input className="input-header" type="text" name="header" value={this.props.formValue.header} onChange={this.props.onFormChange}/>
               </label>
-              <label>Text:<br/>
+              <label>Short Description:<br/>
                 <ReactQuill value={this.props.formValue.text} onChange={this.props.onQuillChange}/>
               </label>
-              <label>Read More URL:<br/>
+              <label>External URL (do not use if news is being added below):<br/>
                 <input className="input-url" type="text" name="url" value={this.props.formValue.url} onChange={this.props.onFormChange}/>
+              </label>
+              <label>Full News Description (use only if no external URL):<br/>
+                <ReactQuill value={this.props.formValue.post} onChange={this.props.onQuillChangePost}/>
               </label>
               <input type="submit" value="Submit"/>
             </form>
@@ -356,11 +396,14 @@ class EditNewsForm extends Component {
               <label>Header:<br/>
                 <input className="input-header" type="text" name="header" value={this.props.editFormValue.header} onChange={this.props.onFormChange}/>
               </label>
-              <label>Text:
+              <label>Short Description:<br/>
                 <ReactQuill value={this.props.editFormValue.text} onChange={this.props.onQuillChange}/>
               </label>
-              <label>Read More URL:<br/>
+              <label>External URL (do not use if news is being added below):<br/>
                 <input className="input-url" type="text" name="url" value={this.props.editFormValue.url} onChange={this.props.onFormChange}/>
+              </label>
+              <label>Full News Description (use only if no external URL):<br/>
+                <ReactQuill value={this.props.editFormValue.post} onChange={this.props.onQuillChangePost}/>
               </label>
               <input type="submit" value="Submit"/>
             </form>
@@ -380,7 +423,7 @@ class ManageNews extends Component {
             return(
               <div key={index}>
                 <h3>{news.header}</h3>
-                <button onClick={() => {this.props.editNews(news.header, news.date, news.text, news.url, news.key); this.props.openForm();}}>Edit</button>
+                <button onClick={() => {this.props.editNews(news.header, news.date, news.text, news.url, news.key, news.post); this.props.openForm();}}>Edit</button>
                 <button onClick={() => this.props.deleteNewsItem(news.key)}>Delete</button>
               </div>
             );

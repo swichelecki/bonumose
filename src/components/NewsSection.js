@@ -44,6 +44,7 @@ class NewsSection extends Component {
 
     render() {
         let newsItem;
+
         if (this.state.newsArray) {
             newsItem = this.state.newsArray.slice(0).reverse().map((news, index) => {
 
@@ -53,7 +54,12 @@ class NewsSection extends Component {
                   <p className="news-date-posted">{news.date}</p>
                     <p className="news-body-text-container" dangerouslySetInnerHTML={{__html: news.text}}>
                     </p>
-                    &nbsp;<span className="anchor-underline"><a className="news-anchor" href={news.url} target="_blank">Read More <i className="fa fa-angle-right"></i></a></span>
+                    {
+                    (news.url.includes('/post/')) ?
+                      <span>&nbsp;<span className="anchor-underline"><a className="news-anchor" href={news.url}target="_self">Read More <i className="fa fa-angle-right"></i></a></span></span>
+                      :
+                      <span>&nbsp;<span className="anchor-underline"><a className="news-anchor" href={news.url}target="_blank">Read More <i className="fa fa-angle-right"></i></a></span></span> 
+                    }
                 </div>
               );
 

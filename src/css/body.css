@@ -99,6 +99,7 @@ p.natuarl-p {
 }
 
 .flex-rect-one {
+  display: table;
   position: relative;
   width: 25%;
   padding-top: 22.6%; /* 450 / 2000 = .225 */
@@ -109,6 +110,7 @@ p.natuarl-p {
 }
 
 .flex-rect-two {
+  display: table;
   position: relative;
   width: 25%;
   padding-top: 22.6%; /* 450 / 2000 = .225 */
@@ -120,6 +122,7 @@ p.natuarl-p {
 
 
 .flex-rect-three {
+  display: table;
   position: relative;
   width: 25%;
   padding-top: 22.6%; /* 450 / 2000 = .225 */
@@ -130,6 +133,7 @@ p.natuarl-p {
 }
 
 .flex-rect-four {
+  display: table;
   position: relative;
   width: 25%;
   padding-top: 22.6%; /* 450 / 2000 = .225 */
