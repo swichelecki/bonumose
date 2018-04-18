@@ -58,7 +58,7 @@ class NewsSection extends Component {
                     (news.url.includes('/post/')) ?
                       <span>&nbsp;<span className="anchor-underline"><a className="news-anchor" href={news.url}target="_self">Read More <i className="fa fa-angle-right"></i></a></span></span>
                       :
-                      <span>&nbsp;<span className="anchor-underline"><a className="news-anchor" href={news.url}target="_blank">Read More <i className="fa fa-angle-right"></i></a></span></span> 
+                      <span>&nbsp;<span className="anchor-underline"><a className="news-anchor" href={news.url}target="_blank">Read More <i className="fa fa-angle-right"></i></a></span></span>
                     }
                 </div>
               );

@@ -135,7 +135,7 @@ class AdminNews extends Component {
 
         let headerDashed = headerString.replace(/\s+/g, '-').toLowerCase();
 
-        let urlFinal = '/news/' + headerDashed;
+        let urlFinal = '/post/' + headerDashed;
 
         this.setState({
           date: today,
