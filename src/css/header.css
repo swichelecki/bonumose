@@ -41,7 +41,6 @@ div#header-image-text-home.header-rare-relative {
 div#header-image-text {
   position: absolute;
   top: 110px;
-  /*top: 20%;*/
   left: 50%;
   transform: translate(-50%, 0);
   font-size: 3.1vw;
@@ -158,7 +157,6 @@ ul.header-ul-block li.absolute-li a{
 }
 
 ul.header-ul-block li.absolute-li a:hover {
-  /*color: #8BC34A;*/
   color: #8bcf00;
 }
 
@@ -197,7 +195,6 @@ ul.header-ul-block-about li.absolute-li a{
 }
 
 ul.header-ul-block-about li.absolute-li a:hover {
-  /*color: #8BC34A;*/
   color: #8bcf00;
 }
 
@@ -247,4 +244,50 @@ ul#header-ul-social li a i{
   cursor: pointer;
   color: #fff;
   font-size: 30px;
+}
+
+a#mobile-nav-button {
+  float: right;
+}
+
+a#mobile-nav-button i {
+  color: #fff;
+  font-size: 30px;
+  display: none;
+  margin: .4rem 2rem 0 0;
+  cursor: pointer;
+}
+
+@media (min-width: 870px) and (max-width: 1075px) {
+
+  ul#header-ul-social li a i {
+    font-size: 25px;
+    margin-top: 5px;
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 870px) {
+
+  nav {
+    display: none;
+  }
+
+  ul#header-ul-social {
+    display: none;
+  }
+
+  a#mobile-nav-button i {
+    display: block;
+  }
+
+  div#header-image-text {
+    display: none;
+  }
+
+  #header-image {
+    padding-top: 80px !important;
+    background-size: auto;
+  }
+
 }

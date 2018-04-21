@@ -23,7 +23,8 @@ class Products extends Component {
           <div className="container">
             <div id="tagatose" className="products-flexbox-container">
               <div className="products-photo-flexbox">
-                <img src="images/tagatose.png"/>
+                <img id="desktop-body-image" src="images/tagatose.png"/>
+                <img id="mobile-body-image" src="/images/400/605_1.jpg"/>
               </div>
               <div className="products-flexbox">
                 <p className="products-text-header">Tagatose</p>
@@ -39,6 +40,9 @@ class Products extends Component {
               </div>
           </div>
           <div id="allulose" className="products-flexbox-container bottom-margin">
+            <div className="products-photo-flexbox-two-desktop">
+              <img id="mobile-body-image" src="/images/400/605_1.jpg"/>
+            </div>
             <div className="products-flexbox">
               <p className="products-text-header-two">Allulose</p>
               <p>
@@ -55,7 +59,7 @@ class Products extends Component {
               </p>
             </div>
             <div className="products-photo-flexbox-two">
-              <img src="images/psicose.png"/>
+              <img id="desktop-body-image" src="images/psicose.png"/>
             </div>
           </div>
           </div>

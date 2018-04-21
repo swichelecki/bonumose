@@ -2,6 +2,7 @@
   text-align: center;
   font-size: 40px;
   margin: 60px 0 60px 0;
+  font-weight: 600;
 }
 
 .flexbox-container {
@@ -28,7 +29,6 @@
   font-size: 35px;
   font-weight: 500;
   font-family: 'Ubuntu', sans-serif;
-  /*font-family: 'Open Sans', sans-serif;*/
 }
 
 .home-flex-info {
@@ -40,12 +40,10 @@
   color: #2a2a2a;
   margin: 0 auto;
   width: 30%;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .home-flex-learn:hover {
-  /*color: #388E3C;*/
-  /*color: #8BC34A;*/
   color: #8bcf00;
 }
 
@@ -53,9 +51,6 @@
   text-align: center;
   max-width: 2000px;
   background-color: #8eb93a;
-  /*background-color: #7ca73b;*/
-  /*background-color: #8BC34A;*/
-  /*background-color: #8bcf00;*/
   padding: 2rem 0 4rem 0;
   margin: 4rem 0;
 }
@@ -65,11 +60,12 @@ p.natural-header {
   font-size: 40px;
   margin: 30px 0 2.5rem 0;
   color: #fff;
+  font-weight: 600;
 }
 
 p.natuarl-p {
   margin: 0 auto;
-  width: 53%;
+  width: 575px;
   color: #fff;
   margin-bottom: 1.5rem;
 }
@@ -78,13 +74,11 @@ p.natuarl-p {
   font-size: 18px;
   width: 30%;
   font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
+  font-weight: 600;
   color: #fff;
 }
 
 .learn-more-a:hover {
-  /*color: #388E3C;*/
-  /*color: #8BC34A;*/
   color: #2a2a2a;
 }
 
@@ -149,9 +143,193 @@ p.rectangle-text {
   left: 50%;
   transform: translate(-50%, 0);
   font-size: 4vw;
-  color: #212121;
   font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   color: #fff;
   text-shadow: 0px 0px 5px #2a2a2a;
+}
+
+@media (min-width: 320px) and (max-width: 885px) {
+
+  .home-flex-learn {
+    width: 40%;
+  }
+
+}
+
+@media (min-width: 400px) and (max-width: 845px) {
+
+  .flexbox-container {
+    display: block;
+    max-width: 845px;
+    padding: 0 2rem;
+  }
+
+  .flexbox {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .flexbox:nth-child(2) {
+    margin-bottom: 0px;
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 399px) {
+
+  .flexbox-container {
+    display: block;
+    max-width: 845px;
+    padding: 0;
+  }
+
+  .flexbox {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .flexbox:nth-child(2) {
+    margin-bottom: 0px;
+  }
+
+}
+
+@media (min-width: 400px) and (max-width: 845px) {
+
+  #rectange-flexbox-container {
+    flex-wrap: wrap;
+  }
+
+  .flex-rect-one, .flex-rect-two, .flex-rect-three, .flex-rect-four {
+    width: 50%;
+    padding-top: 16.8%; /* 140 / 845 = 0.16568047337278 */
+
+  }
+
+  .flex-rect-one {
+    background-image: url('/images/500/423_1.jpg');
+    margin-bottom: -5px;
+  }
+
+  .flex-rect-two {
+    background-image: url('/images/500/423_2.jpg');
+    margin-bottom: -5px;
+  }
+
+  .flex-rect-three {
+    background-image: url('/images/500/423_3.jpg');
+    margin-bottom: -5px;
+  }
+
+  .flex-rect-four {
+    background-image: url('/images/500/423_4.jpg');
+    margin-bottom: -5px;
+  }
+
+  p.rectangle-text {
+    top: 16%;
+    font-size: 4vw;
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 399px) {
+
+  #rectange-flexbox-container {
+    display: block;
+  }
+
+  .flex-rect-one, .flex-rect-two, .flex-rect-three, .flex-rect-four {
+      width: 100%;
+      padding-top: 35.08771929824%; /* 140 / 399 = 0.35087719298246 */
+
+    }
+
+  .flex-rect-one {
+    background-image: url('/images/500/423_1.jpg');
+    margin-bottom: -10px;
+  }
+
+  .flex-rect-two {
+    background-image: url('/images/500/423_2.jpg');
+    margin-bottom: -10px;
+  }
+
+  .flex-rect-three {
+    background-image: url('/images/500/423_3.jpg');
+    margin-bottom: -10px;
+  }
+
+  .flex-rect-four {
+    background-image: url('/images/500/423_4.jpg');
+    margin-bottom: -10px;
+  }
+
+  p.rectangle-text {
+    top: 16%;
+    font-size: 8vw;
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 650px) {
+
+  #natural-wrapper {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  p.natuarl-p {
+    width: 100%;
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 470px) {
+
+  #rectange-flexbox-container {
+    margin-bottom: 2rem;
+  }
+
+  #natural-wrapper {
+    margin-bottom: 2rem;
+  }
+
+}
+
+@media (min-width: 413px) and (max-width: 650px) {
+
+  p.natural-header {
+    font-size: 35px;
+  }
+
+  .body-header {
+    font-size: 35px;
+  }
+
+}
+
+@media (min-width: 365px) and (max-width: 412px) {
+
+  p.natural-header {
+    font-size: 30px;
+  }
+
+  .body-header {
+    font-size: 30px;
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 364px) {
+
+  p.natural-header {
+    font-size: 25px;
+  }
+
+  .body-header {
+    font-size: 25px;
+  }
+
 }

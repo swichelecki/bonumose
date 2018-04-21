@@ -1,5 +1,6 @@
 .company-text-header {
   font-size: 40px;
+  font-weight: 600;
 }
 
 .company-ol {
@@ -7,7 +8,49 @@
   line-height: 1.5rem;
 }
 
+.company-ol li {
+  margin-bottom: 1rem;
+}
+
 .company-bottom-margin {
   margin-bottom: 6rem;
   padding: 0 2rem !important;
+}
+
+@media (min-width: 320px) and (max-width: 669px) {
+
+  .company-bottom-margin {
+    margin-bottom: 4rem;
+  }
+
+}
+
+@media (min-width: 413px) and (max-width: 650px) {
+
+  .company-text-header {
+    font-size: 35px;
+  }
+
+}
+
+@media (min-width: 365px) and (max-width: 412px) {
+
+  .company-text-header {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 364px) {
+
+  .company-text-header {
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  .company-ol {
+    padding-left: 1.2rem;
+  }
+
 }

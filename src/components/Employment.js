@@ -101,7 +101,7 @@ class Employment extends Component {
               <p className="job-body-text-container" dangerouslySetInnerHTML={{__html: this.state.newJobsArray.job}}>
               </p>
               <div className="apply-now-wrapper">
-                <a href={`mailto:erogers@bonumose.com?subject=Bonumose%20Job%20Application:%20${subject}&body=Please%20attach%20your%20resume%20and%20cover%20letter.`}>
+                <a className="apply-button-a" href={`mailto:erogers@bonumose.com?subject=Bonumose%20Job%20Application:%20${subject}&body=Please%20attach%20your%20resume%20and%20cover%20letter.`}>
                   <button className="apply-button">
                     Apply Now
                   </button>

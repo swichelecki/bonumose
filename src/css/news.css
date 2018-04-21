@@ -1,6 +1,7 @@
 h2.news-header {
   max-width: 45rem;
   line-height: 2rem;
+  font-weight: 600;
 }
 
 p.news-body-text-container {
@@ -60,7 +61,8 @@ i.fa-angle-right {
 
 .apply-now-wrapper a .apply-button {
   width: 30%;
-  padding: 2rem;
+  text-align: center;
+  padding: 4% 0;
   font-size: 40px;
   color: #fff;
   background-color: #2a2a2a;
@@ -71,4 +73,45 @@ i.fa-angle-right {
   color: #2a2a2a;
   background-color: #8bcf00;
   box-shadow: 0px 5px 15px 0px #999;
+}
+
+@media (min-width: 500px) and (max-width: 1000px) {
+
+  .apply-now-wrapper a .apply-button {
+    font-size: 4vw;
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 669px) {
+
+  .apply-now-wrapper {
+    margin-top: 3rem;
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 499px) {
+
+  .apply-now-wrapper a .apply-button {
+    font-size: 20px;
+    width: 130px;
+    height: 55px;
+    padding: 1rem 0;
+  }
+
+  a.apply-button-a {
+    width: 130px;
+    height: 55px;
+    display: inline-block;
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 412px) {
+
+  h2.news-header {
+    font-size: 20px;
+  }
+
 }

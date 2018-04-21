@@ -51,7 +51,7 @@ class Header extends Component {
       let location = window.location.href;
       let split = location.split('/');
       let path = split[3];
-
+      
       let url;
       let padding = '32.6%';
 
@@ -177,8 +177,9 @@ class Header extends Component {
         <div id="header-container">
           <div id="top"></div>
           <div style={style} id="header-image">
-          <header>
+          <header className="clearfix">
             <h1 id="header-name"><Link to="/">Bonumose</Link></h1>
+            <a id="mobile-nav-button"><i className="fa fa-bars" aria-hidden="true"></i></a>
             <nav>
               <ul onMouseEnter={this.onHoverLi} onMouseLeave={this.LeaveHoverLi} className="header-ul-block">
                 <li><Link to="/products">Products<i className="fa fa-angle-down"></i></Link></li>
@@ -203,8 +204,8 @@ class Header extends Component {
               </div>
             </nav>
             <ul id="header-ul-social">
-              <li><a href=""><i className="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-              <li><a href=""><i className="fa fa-linkedin"></i></a></li>
+              <li><a href="https://twitter.com/bonumose"><i className="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.linkedin.com/jobs/search/?keywords=bonumose&location=United%20States&locationId=us%3A0"><i className="fa fa-linkedin"></i></a></li>
             </ul>
           </header>
             {headerText}
