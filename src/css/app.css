@@ -102,6 +102,62 @@ body {
   margin-bottom: 4rem;
 }
 
+/* mobile navigation */
+
+.mobile-nav {
+  position: fixed;
+  display: block;
+  z-index: 1;
+  min-height: 100%;
+  top: 0;
+  right: -225px;
+  width: 225px;
+  background-color: #2a2a2a;
+}
+
+.mobile-nav .mobile-nav-link {
+  display: block;
+  line-height: 3rem;
+  color: #f8f8f8;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Ubuntu', sans-serif;
+  border-bottom: 1px solid #666;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.mobile-nav .mobile-nav-link:hover {
+    background-color: #666;
+}
+
+.mobile-nav-link.mobile-indent {
+  font-size: 16px;
+  padding-left: 40px;
+}
+
+.open-mobile-nav {
+  overflow-x: hidden;
+  position: relative;
+  -webkit-transform: translateX(-225px);
+  -moz-transform: translateX(-225px);
+  transform: translateX(-225px);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+
+.close-mobile-nav {
+  overflow-x: hidden;
+  position: relative;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  transform: translateX(0);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+
 @media (min-width: 670px) and (max-width: 735px) {
 
   .products-text-header {
@@ -114,7 +170,7 @@ body {
 
 }
 
-@media (min-width: 320px) and (max-width: 669px) {
+@media (min-width: 320px) and (max-width: 870px) {
 
   .products-flexbox-container {
     display: block;
@@ -123,6 +179,11 @@ body {
   .products-flexbox {
     width: 100%;
     padding: 2rem 2rem 0 2rem;
+  }
+
+  .products-photo-flexbox {
+    width: 100%;
+    padding: 2rem 2rem 0rem 2rem;
   }
 
   .products-photo-flexbox-two-desktop {
@@ -163,12 +224,12 @@ body {
 
   .products-photo-flexbox {
     width: 100%;
-    padding: 4rem 2rem 0rem 2rem;
+    padding: 2rem 2rem 0rem 2rem;
   }
 
   .products-photo-flexbox-two-desktop {
     width: 100%;
-    padding: 4rem 2rem 0rem 2rem;
+    padding: 0.5rem 2rem 0rem 2rem;
   }
 
 }
@@ -177,12 +238,12 @@ body {
 
   .products-photo-flexbox {
     width: 100%;
-    padding: 0rem 0rem 0rem 0rem;
+    padding: 1rem 0rem 0rem 0rem;
   }
 
   .products-photo-flexbox-two-desktop {
     width: 100%;
-    padding: 0rem 0rem 0rem 0rem;
+    padding: 1rem 0rem 0rem 0rem;
   }
 
 }

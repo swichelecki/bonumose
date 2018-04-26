@@ -97,7 +97,7 @@ p.natuarl-p {
   position: relative;
   width: 25%;
   padding-top: 22.6%; /* 450 / 2000 = .225 */
-  background-image: url('/images/500/500_450_exercise.jpg');
+  background-image: url('/images/500/1000_900_healthy.jpg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top center;
@@ -108,7 +108,7 @@ p.natuarl-p {
   position: relative;
   width: 25%;
   padding-top: 22.6%; /* 450 / 2000 = .225 */
-  background-image: url('/images/500/500_450_money.jpg');
+  background-image: url('/images/500/1000_900_money.jpg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top center;
@@ -120,7 +120,7 @@ p.natuarl-p {
   position: relative;
   width: 25%;
   padding-top: 22.6%; /* 450 / 2000 = .225 */
-  background-image: url('/images/500/500_450_icecream.jpg');
+  background-image: url('/images/500/1000_900_icecream.jpg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top center;
@@ -131,7 +131,7 @@ p.natuarl-p {
   position: relative;
   width: 25%;
   padding-top: 22.6%; /* 450 / 2000 = .225 */
-  background-image: url('/images/500/500_450_cookies.jpg');
+  background-image: url('/images/500/1000_900_cookies.jpg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top center;
@@ -147,6 +147,27 @@ p.rectangle-text {
   font-weight: 400;
   color: #fff;
   text-shadow: 0px 0px 5px #2a2a2a;
+}
+
+.products-photo-flexbox-home {
+  display: none;
+  margin-top: 1rem;
+}
+
+#mobile-body-image-home {
+  display: none;
+}
+
+@media (min-width: 400px) and (max-width: 870px) {
+
+  .products-photo-flexbox-home {
+    display: block;
+  }
+
+  #mobile-body-image-home {
+    display: block;
+  }
+
 }
 
 @media (min-width: 320px) and (max-width: 885px) {
@@ -176,25 +197,6 @@ p.rectangle-text {
 
 }
 
-@media (min-width: 320px) and (max-width: 399px) {
-
-  .flexbox-container {
-    display: block;
-    max-width: 845px;
-    padding: 0;
-  }
-
-  .flexbox {
-    width: 100%;
-    margin-bottom: 60px;
-  }
-
-  .flexbox:nth-child(2) {
-    margin-bottom: 0px;
-  }
-
-}
-
 @media (min-width: 400px) and (max-width: 845px) {
 
   #rectange-flexbox-container {
@@ -208,22 +210,22 @@ p.rectangle-text {
   }
 
   .flex-rect-one {
-    background-image: url('/images/500/423_1.jpg');
+    background-image: url('/images/500/846_280_healthy.jpg');
     margin-bottom: -5px;
   }
 
   .flex-rect-two {
-    background-image: url('/images/500/423_2.jpg');
+    background-image: url('/images/500/846_280_money.jpg');
     margin-bottom: -5px;
   }
 
   .flex-rect-three {
-    background-image: url('/images/500/423_3.jpg');
+    background-image: url('/images/500/846_280_icecream.jpg');
     margin-bottom: -5px;
   }
 
   .flex-rect-four {
-    background-image: url('/images/500/423_4.jpg');
+    background-image: url('/images/500/846_280_cookies.jpg');
     margin-bottom: -5px;
   }
 
@@ -247,28 +249,76 @@ p.rectangle-text {
     }
 
   .flex-rect-one {
-    background-image: url('/images/500/423_1.jpg');
+    background-image: url('/images/500/846_280_healthy.jpg');
     margin-bottom: -10px;
   }
 
   .flex-rect-two {
-    background-image: url('/images/500/423_2.jpg');
+    background-image: url('/images/500/846_280_money.jpg');
     margin-bottom: -10px;
   }
 
   .flex-rect-three {
-    background-image: url('/images/500/423_3.jpg');
+    background-image: url('/images/500/846_280_icecream.jpg');
     margin-bottom: -10px;
   }
 
   .flex-rect-four {
-    background-image: url('/images/500/423_4.jpg');
+    background-image: url('/images/500/846_280_cookies.jpg');
     margin-bottom: -10px;
   }
 
   p.rectangle-text {
     top: 16%;
     font-size: 8vw;
+  }
+
+  .home-flex-title {
+    font-size: 25px;
+  }
+
+  .products-photo-flexbox-home {
+    display: block;
+  }
+
+  #mobile-body-image-home {
+    display: block;
+  }
+
+  img.body-product-image{
+    display: none;
+  }
+
+  .home-flex-title {
+    margin-top: 0;
+  }
+
+  .flexbox {
+    box-shadow: none;
+  }
+
+  p.natural-header {
+    font-size: 25px;
+    margin: 0 0 20px 0;
+  }
+
+  .flexbox-container {
+    display: block;
+    max-width: 845px;
+    padding: 0;
+  }
+
+  .flexbox {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .flexbox:nth-child(2) {
+    margin-bottom: 0px;
+  }
+
+  #natural-wrapper {
+    padding-bottom: 2rem;
   }
 
 }
@@ -286,50 +336,26 @@ p.rectangle-text {
 
 }
 
-@media (min-width: 320px) and (max-width: 470px) {
-
-  #rectange-flexbox-container {
-    margin-bottom: 2rem;
-  }
-
-  #natural-wrapper {
-    margin-bottom: 2rem;
-  }
-
-}
-
-@media (min-width: 413px) and (max-width: 650px) {
-
-  p.natural-header {
-    font-size: 35px;
-  }
-
-  .body-header {
-    font-size: 35px;
-  }
-
-}
-
-@media (min-width: 365px) and (max-width: 412px) {
-
+@media (min-width: 400px) and (max-width: 445px) {
   p.natural-header {
     font-size: 30px;
   }
+}
+
+@media (min-width: 365px) and (max-width: 445px) {
 
   .body-header {
     font-size: 30px;
+    margin: 40px 0 40px 0;
   }
 
 }
 
 @media (min-width: 320px) and (max-width: 364px) {
 
-  p.natural-header {
-    font-size: 25px;
-  }
-
   .body-header {
     font-size: 25px;
+    margin: 30px 0 30px 0;
   }
 
 }

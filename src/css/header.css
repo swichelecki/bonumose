@@ -30,7 +30,8 @@ div#header-image-text-home.header-rare-relative {
 
 .header-rare-absolute {
   position: absolute;
-  left: 16px;
+  left: 5%;
+  top: 5px;
   font-weight: 400;
 }
 
@@ -254,7 +255,7 @@ a#mobile-nav-button i {
   color: #fff;
   font-size: 30px;
   display: none;
-  margin: .4rem 2rem 0 0;
+  margin: .5rem 2rem 0 0;
   cursor: pointer;
 }
 

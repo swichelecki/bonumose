@@ -8,8 +8,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
-//var GoogleFontsPlugin = require('google-fonts-webpack-plugin');
-
 var extractPlugin = new ExtractTextPlugin({
     filename: '[name].css',
     allChunks: true,
@@ -83,15 +81,5 @@ module.exports = {
       }),
       new CleanWebpackPlugin(['dist']),
       extractPlugin,
-      /*new GoogleFontsPlugin({
-            fonts: [{
-              family: 'Open Sans',
-              variants: ['400']
-            },
-            {
-              family: 'Ubuntu',
-              variants: ['500', '400', '300']
-            }]
-      })*/
   ]
 }

@@ -19,8 +19,8 @@ class Natural extends Component {
         <div className="container">
           <div className="products-flexbox-container">
             <div className="products-photo-flexbox">
-              <img id="desktop-body-image" src="/images/400/400_500_corn.jpg"/>
-              <img id="mobile-body-image" src="/images/400/605_1.jpg"/>
+              <img id="desktop-body-image" src="/images/400/800_1000_corn.jpg"/>
+              <img id="mobile-body-image" src="/images/400/1210_corn.jpg"/>
             </div>
             <div className="products-flexbox">
               <p className="products-text-header">Naturally Occuring</p>
@@ -37,7 +37,7 @@ class Natural extends Component {
         </div>
         <div className="products-flexbox-container bottom-margin">
           <div className="products-photo-flexbox-two-desktop">
-            <img id="mobile-body-image" src="/images/400/605_1.jpg"/>
+            <img id="mobile-body-image" src="/images/400/1210_potatoes.jpg"/>
           </div>
           <div className="products-flexbox">
             <p className="products-text-header-two">Enzymes</p>
@@ -49,7 +49,7 @@ class Natural extends Component {
             </p>
           </div>
           <div className="products-photo-flexbox-two">
-            <img id="desktop-body-image" src="/images/400/400_500_potatoes.jpg"/>
+            <img id="desktop-body-image" src="/images/400/800_1000_potatoes.jpg"/>
           </div>
         </div>
         </div>

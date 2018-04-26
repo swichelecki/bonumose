@@ -21,8 +21,8 @@ class Affordable extends Component {
           <div className="container">
             <div className="products-flexbox-container">
               <div className="products-photo-flexbox">
-                <img id="desktop-body-image" src="images/400/400_500_money.jpg"/>
-                <img id="mobile-body-image" src="/images/400/605_1.jpg"/>
+                <img id="desktop-body-image" src="images/400/800_1000_money.jpg"/>
+                <img id="mobile-body-image" src="/images/400/1210_money.jpg"/>
               </div>
               <div className="products-flexbox">
                 <p className="products-text-header">Affordable</p>
@@ -36,7 +36,7 @@ class Affordable extends Component {
           </div>
           <div id="healthy" className="products-flexbox-container bottom-margin">
             <div className="products-photo-flexbox-two-desktop">
-              <img id="mobile-body-image" src="/images/400/605_1.jpg"/>
+              <img id="mobile-body-image" src="/images/400/1210_exercise.jpg"/>
             </div>
             <div className="products-flexbox">
               <p className="products-text-header-two">Healthy</p>
@@ -72,7 +72,7 @@ class Affordable extends Component {
               </p>
             </div>
             <div className="products-photo-flexbox-two">
-              <img id="desktop-body-image" src="/images/400/400_500_healthy.jpg"/>
+              <img id="desktop-body-image" src="/images/400/800_1000_healthy.jpg"/>
             </div>
           </div>
           </div>

@@ -19,8 +19,8 @@ class Functional extends Component {
           <div className="container">
             <div className="products-flexbox-container">
               <div className="products-photo-flexbox">
-                <img id="desktop-body-image" src="/images/400/400_500_icecream.jpg"/>
-                <img id="mobile-body-image" src="/images/400/605_1.jpg"/>
+                <img id="desktop-body-image" src="/images/400/800_1000_icecream.jpg"/>
+                <img id="mobile-body-image" src="/images/400/1210_icecream.jpg"/>
               </div>
               <div className="products-flexbox">
                 <p className="products-text-header">Great Tasting</p>
@@ -37,7 +37,7 @@ class Functional extends Component {
             </div>
             <div id="functional" className="products-flexbox-container bottom-margin">
               <div className="products-photo-flexbox-two-desktop">
-                <img id="mobile-body-image" src="/images/400/605_1.jpg"/>
+                <img id="mobile-body-image" src="/images/400/1210_cookies.jpg"/>
               </div>
               <div className="products-flexbox">
               <p className="products-text-header-two">Functional</p>
@@ -55,7 +55,7 @@ class Functional extends Component {
               </p>
             </div>
             <div className="products-photo-flexbox-two">
-              <img id="desktop-body-image" src="/images/400/400_500_cookies.jpg"/>
+              <img id="desktop-body-image" src="/images/400/800_1000_cookies.jpg"/>
             </div>
             </div>
           </div>

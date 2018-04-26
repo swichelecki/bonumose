@@ -19,6 +19,9 @@ class Body extends Component {
       return(
         <div>
           <div className="container">
+            <div className="products-photo-flexbox-home">
+              <img id="mobile-body-image-home" src="/images/400/1210_apples.jpg"/>
+            </div>
             <p className="body-header">Good for You Sugars</p>
             <div className="flexbox-container">
               <div className="flexbox">

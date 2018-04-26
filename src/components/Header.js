@@ -9,9 +9,11 @@ class Header extends Component {
       this.LeaveHoverLi = this.LeaveHoverLi.bind(this);
       this.onHoverLiAbout = this.onHoverLiAbout.bind(this);
       this.LeaveHoverLiAbout = this.LeaveHoverLiAbout.bind(this);
+      this.openCloseMobileNav = this.openCloseMobileNav.bind(this);
       this.state = {
           hover: {display: 'none'},
-          about: {display: 'none'}
+          about: {display: 'none'},
+          open: false
       };
     }
 
@@ -43,7 +45,33 @@ class Header extends Component {
       });
     }
 
+   /*
+    * @desc opens and closes mobile nav
+    */
+
+    openCloseMobileNav(event) {
+
+      let mobileNav = this.state.open;
+
+      if (mobileNav == false) {
+          this.setState({
+            open: true
+          });
+      } else if (mobileNav == true) {
+          this.setState({
+            open: false
+          });
+      }
+    }
+
     render() {
+
+      const transform = this.state.transform;
+      const webkitTransform = this.state.transform;
+      const mozTransform = this.state.transform;
+      const transition = this.state.transition;
+      const webkitTransition = this.state.transition;
+      const mozTransition = this.state.transition;
 
       const hover = this.state.hover;
       const about = this.state.about;
@@ -51,7 +79,7 @@ class Header extends Component {
       let location = window.location.href;
       let split = location.split('/');
       let path = split[3];
-      
+
       let url;
       let padding = '32.6%';
 
@@ -90,7 +118,6 @@ class Header extends Component {
       if (path == '') {
             headerText = (
               <div id="header-image-text">
-                {/*Rare Sugars are Good for You*/}
                 <span className="header-rare-relative"><span className="header-rare-absolute">Rare Sugars</span></span><br /><span className="header-are-relative"><span className="header-are-absolute">are</span></span><br /><span className="good-for-you">Good for You</span>
               </div>
             )
@@ -174,12 +201,29 @@ class Header extends Component {
               };
 
       return(
+        <div>
+        {this.state.open && <MoveBodyTag />}
+        <nav className="mobile-nav">
+          <Link onClick={this.openCloseMobileNav} to="/products" className="mobile-nav-link">Products<i className="fa fa-angle-down"></i></Link>
+          <HashLink onClick={this.openCloseMobileNav} to="products#tagatose" className="mobile-nav-link mobile-indent">Tagatose</HashLink>
+          <HashLink onClick={this.openCloseMobileNav} to="products#allulose" className="mobile-nav-link mobile-indent">Allulose</HashLink>
+          <Link onClick={this.openCloseMobileNav} to="/naturally-occurring" className="mobile-nav-link">Natural</Link>
+          <Link onClick={this.openCloseMobileNav} to="/affordable" className="mobile-nav-link">Affordable</Link>
+          <Link onClick={this.openCloseMobileNav} to="/functional" className="mobile-nav-link">Functional</Link>
+          <Link onClick={this.openCloseMobileNav} to="/company" className="mobile-nav-link">About<i className="fa fa-angle-down"></i></Link>
+          <Link onClick={this.openCloseMobileNav} to="/company" className="mobile-nav-link mobile-indent">Company</Link>
+          <HashLink onClick={this.openCloseMobileNav} to="/company#team" className="mobile-nav-link mobile-indent">Team</HashLink>
+          <Link onClick={this.openCloseMobileNav} to="/news" className="mobile-nav-link mobile-indent">News</Link>
+          <HashLink onClick={this.openCloseMobileNav} to="/news#employment" className="mobile-nav-link mobile-indent">Employment</HashLink>
+          <a className="mobile-nav-link" href="https://twitter.com/bonumose"><i className="fa fa-twitter-square" aria-hidden="true"></i></a>
+          <a className="mobile-nav-link" href="https://www.linkedin.com/jobs/search/?keywords=bonumose&location=United%20States&locationId=us%3A0"><i className="fa fa-linkedin"></i></a>
+        </nav>
         <div id="header-container">
           <div id="top"></div>
           <div style={style} id="header-image">
           <header className="clearfix">
             <h1 id="header-name"><Link to="/">Bonumose</Link></h1>
-            <a id="mobile-nav-button"><i className="fa fa-bars" aria-hidden="true"></i></a>
+            <a onClick={this.openCloseMobileNav} id="mobile-nav-button"><i className="fa fa-bars" aria-hidden="true"></i></a>
             <nav>
               <ul onMouseEnter={this.onHoverLi} onMouseLeave={this.LeaveHoverLi} className="header-ul-block">
                 <li><Link to="/products">Products<i className="fa fa-angle-down"></i></Link></li>
@@ -211,8 +255,31 @@ class Header extends Component {
             {headerText}
           </div>
         </div>
+        </div>
       );
 
+    }
+}
+
+class MoveBodyTag extends Component {
+
+  /*
+   * @desc clicking burger mounts or unmounts component. component moves body tag
+   */
+
+   componentDidMount() {
+     document.getElementById('body').className="open-mobile-nav";
+   }
+
+   componentWillUnmount() {
+     document.getElementById('body').className="close-mobile-nav";
+   }
+
+    render() {
+
+       return(
+         <div></div>
+       );
     }
 }
 
