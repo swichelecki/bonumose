@@ -55,6 +55,7 @@ import './images/500/846_280_healthy.jpg';
 import './images/500/846_280_icecream.jpg';
 import './images/500/846_280_money.jpg';
 import './images/500/846_280_cookies.jpg';
+import './images/icon_bonumose_large.png';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
