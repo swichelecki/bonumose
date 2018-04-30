@@ -3,8 +3,8 @@ import ReactQuill from 'react-quill';
 import * as firebase from 'firebase';
 
 class AdminJobs extends Component {
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.handleFormChange = this.handleFormChange.bind(this);
       this.formChangeCallback = this.formChangeCallback.bind(this);
       this.handleQuillChange = this.handleQuillChange.bind(this);
@@ -195,6 +195,12 @@ class AdminJobs extends Component {
         job: ''
       });
 
+      for (var i = 0; i < 8; i++) {
+
+      document.getElementsByClassName('ql-editor')[i].innerHTML = '';
+
+      }
+
       window.scrollTo(0,0);
 
     }
@@ -303,6 +309,15 @@ class AdminJobs extends Component {
 
     }
 
+   /*
+    * @desc disconnects app from Firebase table when route changes
+    */
+
+    componentWillUnmount() {
+      let app = firebase.database().ref('jobs');
+      app.off();
+    }
+
     render() {
 
         return(
@@ -359,7 +374,7 @@ class JobsForm extends Component {
                 <ReactQuill value={this.props.formValue.text} onChange={this.props.onQuillChange}/>
               </label>
               <label>Full Job Description:<br/>
-                <ReactQuill value={this.props.formValue.job} onChange={this.props.onQuillChangeJob}/>
+                <ReactQuill onChange={this.props.onQuillChangeJob}/>
               </label>
                 <input type="submit" value="Submit"/>
             </form>

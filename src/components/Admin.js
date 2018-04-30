@@ -15,7 +15,8 @@ class Admin extends Component {
 
       this.state = {
         user: '',
-        password: ''
+        password: '',
+        tabBackground: '#2222'
       };
 
     }
@@ -75,6 +76,10 @@ class Admin extends Component {
 
     showHideTab(number){
 
+      this.setState(
+        {tabBackground: ""}
+      );
+
       let tabs = document.getElementsByClassName('tab');
       let firstTab = document.getElementById('one');
 
@@ -83,6 +88,16 @@ class Admin extends Component {
       }
 
       document.getElementById(number).style.display = 'block';
+
+      let li = document.querySelectorAll('li');
+
+      li.forEach(li => {
+        if (number == li.dataset.li) {
+          li.classList.remove('li-background');
+        } else {
+          li.classList.add('li-background');
+        }
+      });
 
     }
 
@@ -185,6 +200,8 @@ class Admin extends Component {
 
     render() {
 
+        const style = {backgroundColor: this.state.tabBackground};
+
         return(
           <div>
           <div className="admin-header">
@@ -193,8 +210,8 @@ class Admin extends Component {
           </div>
           <div className="container">
             <ul className="admin-ul">
-              <li onClick={() => this.showHideTab('two')} className="login">News</li>
-              <li onClick={() => this.showHideTab('three')} className="login">Jobs</li>
+              <li onClick={() => this.showHideTab('two')} className="login" data-li="two">News</li>
+              <li onClick={() => this.showHideTab('three')} className="login" data-li="three" style={style}>Jobs</li>
             </ul>
             <div id="one">
               <div className="absolute-center">

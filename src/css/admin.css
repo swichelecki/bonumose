@@ -64,7 +64,11 @@ button.cancel-button {
   padding: 1rem 1.5rem 1rem 1.5rem;
 }
 
-.admin-ul li:hover {
+/*.admin-ul li:hover {
+  background-color: #2222;
+}*/
+
+.li-background {
   background-color: #2222;
 }
 

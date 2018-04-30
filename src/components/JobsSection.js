@@ -21,7 +21,6 @@ class JobsSection extends Component {
       app.on('value', snapshot => {
         this.getData(snapshot.val());
       });
-
     }
 
    /*
@@ -41,6 +40,15 @@ class JobsSection extends Component {
         jobsArray: jobs
       });
 
+    }
+
+   /*
+    * @desc disconnects app from Firebase table when route changes
+    */
+
+    componentWillUnmount() {
+      let app = firebase.database().ref('jobs');
+      app.off();
     }
 
     render() {

@@ -85,6 +85,15 @@ class Employment extends Component {
 
     }
 
+   /*
+    * @desc disconnects app from Firebase table when route changes
+    */
+
+    componentWillUnmount() {
+      let app = firebase.database().ref('jobs');
+      app.off();
+    }
+
     render() {
 
       const subject = (this.state.newJobsArray.header);

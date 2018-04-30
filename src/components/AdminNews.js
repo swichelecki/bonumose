@@ -3,8 +3,8 @@ import ReactQuill from 'react-quill';
 import * as firebase from 'firebase';
 
 class AdminNews extends Component {
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.handleFormChange = this.handleFormChange.bind(this);
       this.formChangeCallback = this.formChangeCallback.bind(this);
       this.handleQuillChange = this.handleQuillChange.bind(this);
@@ -140,7 +140,7 @@ class AdminNews extends Component {
         this.setState({
           date: today,
           url: urlFinal
-        });
+        }, this.handleFormSubmit);
 
       } else {
 
@@ -173,6 +173,12 @@ class AdminNews extends Component {
         date: '',
         post: ''
       });
+
+      for (var i = 0; i < 8; i++) {
+
+      document.getElementsByClassName('ql-editor')[i].innerHTML = '';
+
+      }
 
       window.scrollTo(0,0);
 
@@ -315,6 +321,15 @@ class AdminNews extends Component {
 
     }
 
+   /*
+    * @desc disconnects app from Firebase table when route changes
+    */
+
+    componentWillUnmount() {
+      let app = firebase.database().ref('news');
+      app.off();
+    }
+
     render() {
 
         return(
@@ -373,7 +388,7 @@ class NewsForm extends Component {
                 <input className="input-url" type="text" name="url" value={this.props.formValue.url} onChange={this.props.onFormChange}/>
               </label>
               <label>Full News Description (use only if no external URL):<br/>
-                <ReactQuill value={this.props.formValue.post} onChange={this.props.onQuillChangePost}/>
+                <ReactQuill onChange={this.props.onQuillChangePost}/>
               </label>
               <input type="submit" value="Submit"/>
             </form>

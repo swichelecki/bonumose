@@ -85,6 +85,15 @@ class NewsPost extends Component {
 
     }
 
+   /*
+    * @desc disconnects app from Firebase table when route changes
+    */
+
+    componentWillUnmount() {
+       let app = firebase.database().ref('news');
+       app.off();
+    }
+
     render() {
 
         return(
